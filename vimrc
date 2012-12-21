@@ -20,14 +20,6 @@ Bundle 'aaronzirbes/grails-vim.git'
 Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/ZoomWin'
 Bundle 'scrooloose/nerdtree'
-"Bundle 'Lokaltog/vim-easymotion'
-"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-"Bundle 'tpope/vim-rails.git'
-" vim-scripts repos
-"Bundle 'L9'
-"Bundle 'FuzzyFinder'
-" non github repos
-"Bundle 'git://git.wincent.com/command-t.git'
 
 filetype plugin indent on
 
