@@ -76,15 +76,13 @@ set ruler
 " Whether or not to show the tabs list
 "set showtabline=2
 
-" The magic minum witdth of columns for the current window
-"set winwidth=79
 "
 " COMMENT THESE OUT TO LET VIM WINDOWS BE THE DEFAULT SIZE
 set winwidth=160
 set winminwidth=12
 set winheight=25
 set winminheight=5
-"au VimEnter * set winheight=999
+au VimEnter * set winheight=999
 
 " The number of lines before and after the cursor to show
 set scrolloff=3
@@ -125,4 +123,8 @@ noremap <Leader>h :<C-U>Gbrowse<CR>
 noremap <Leader>c :<C-U>Gcommit<CR>
 noremap <Leader>t :<C-U>NERDTreeToggle<CR>
 noremap <Leader>f :<C-U>NERDTreeFind<CR>
+" Copy selected range to Mac OS X copy buffer
+vnoremap <Leader>y :<C-U>!sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p '<C-R>=expand("%:p") <CR>' \|pbcopy <CR> <CR>
+" Copy entire file contents to Mac OS X copy buffer
+nnoremap <Leader>y :<C-U>!cat '<C-R>=expand("%:p") <CR>' \| pbcopy <CR> <CR>
 
