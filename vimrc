@@ -76,8 +76,6 @@ set ruler
 " Whether or not to show the tabs list
 "set showtabline=2
 
-" The magic minum witdth of columns for the current window
-"set winwidth=79
 "
 " COMMENT THESE OUT TO LET VIM WINDOWS BE THE DEFAULT SIZE
 set winwidth=160
@@ -125,4 +123,8 @@ noremap <Leader>h :<C-U>Gbrowse<CR>
 noremap <Leader>c :<C-U>Gcommit<CR>
 noremap <Leader>t :<C-U>NERDTreeToggle<CR>
 noremap <Leader>f :<C-U>NERDTreeFind<CR>
+" Copy selected range to Mac OS X copy buffer
+vnoremap <Leader>y :<C-U>!sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p '<C-R>=expand("%:p") <CR>' \|pbcopy <CR> <CR>
+" Copy entire file contents to Mac OS X copy buffer
+nnoremap <Leader>y :<C-U>!cat '<C-R>=expand("%:p") <CR>' \| pbcopy <CR> <CR>
 
