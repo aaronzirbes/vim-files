@@ -84,7 +84,7 @@ set winwidth=160
 set winminwidth=12
 set winheight=25
 set winminheight=5
-"au VimEnter * set winheight=999
+au VimEnter * set winheight=999
 
 " The number of lines before and after the cursor to show
 set scrolloff=3
@@ -119,7 +119,7 @@ endfunction
 
 " Mercurial Diff => <Leader>b
 noremap <Leader>b :<C-U>Gblame<CR>
-noremap <Leader>s :<C-U>Gstatus<CR>
+noremap <Leader>s :<C-U>Gstatus<CR><C-W>20+
 noremap <Leader>l :<C-U>Glog<CR>
 noremap <Leader>h :<C-U>Gbrowse<CR>
 noremap <Leader>c :<C-U>Gcommit<CR>
