@@ -115,7 +115,7 @@ function! GenerateCTags()
 	execute ":!ctags -f " . file . "/.tags " . file . "/*"
 endfunction
 
-" Mercurial Diff => <Leader>b
+" Git Diff => <Leader>b
 noremap <Leader>b :<C-U>Gblame<CR>
 noremap <Leader>s :<C-U>Gstatus<CR><C-W>20+
 noremap <Leader>l :<C-U>Glog<CR>
@@ -123,6 +123,8 @@ noremap <Leader>h :<C-U>Gbrowse<CR>
 noremap <Leader>c :<C-U>Gcommit<CR>
 noremap <Leader>t :<C-U>NERDTreeToggle<CR>
 noremap <Leader>f :<C-U>NERDTreeFind<CR>
+" Jira https://gist.github.com/2d860441b323e543d2bc
+noremap <Leader>j :<C-U>!jira<CR> <CR>
 " Copy selected range to Mac OS X copy buffer
 vnoremap <Leader>y :<C-U>!sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p '<C-R>=expand("%:p") <CR>' \|pbcopy <CR> <CR>
 " Copy entire file contents to Mac OS X copy buffer
