@@ -78,7 +78,7 @@ set ruler
 
 "
 " COMMENT THESE OUT TO LET VIM WINDOWS BE THE DEFAULT SIZE
-set winwidth=160
+set winwidth=130
 set winminwidth=12
 set winheight=25
 set winminheight=5
@@ -108,6 +108,9 @@ set shiftwidth=4
 set laststatus=2
 colorscheme torte
 
+set colorcolumn=121
+highlight ColorColumn ctermbg=2
+
 " ctags
 command! Tag :call GenerateCTags()
 function! GenerateCTags() 
@@ -115,8 +118,12 @@ function! GenerateCTags()
 	execute ":!ctags -f " . file . "/.tags " . file . "/*"
 endfunction
 
+" Spell check my stuff
+"set spell spelllang=en_us
+
 " Git Diff => <Leader>b
 noremap <Leader>b :<C-U>Gblame<CR>
+noremap <Leader>d :<C-U>Gdiff<CR>
 noremap <Leader>s :<C-U>Gstatus<CR><C-W>20+
 noremap <Leader>l :<C-U>Glog<CR>
 noremap <Leader>h :<C-U>Gbrowse<CR>
@@ -125,6 +132,8 @@ noremap <Leader>t :<C-U>NERDTreeToggle<CR>
 noremap <Leader>f :<C-U>NERDTreeFind<CR>
 " Jira https://gist.github.com/2d860441b323e543d2bc
 noremap <Leader>j :<C-U>!jira<CR> <CR>
+" Enable Spell check highting for buffer
+noremap <Leader>p :<C-U>set spell spelllang=en_us<CR>
 " Copy selected range to Mac OS X copy buffer
 vnoremap <Leader>y :<C-U>!sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p '<C-R>=expand("%:p") <CR>' \|pbcopy <CR> <CR>
 " Copy entire file contents to Mac OS X copy buffer
