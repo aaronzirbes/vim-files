@@ -19,7 +19,10 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'aaronzirbes/grails-vim.git'
 Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/ZoomWin'
+Bundle 'vim-scripts/taglist.vim'
 Bundle 'scrooloose/nerdtree'
+Bundle 'gregsexton/gitv'
+" After updating this list, run `vim +BundleInstall +qall`
 
 filetype plugin indent on
 
@@ -139,3 +142,4 @@ vnoremap <Leader>y :<C-U>!sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p '<
 " Copy entire file contents to Mac OS X copy buffer
 nnoremap <Leader>y :<C-U>!cat '<C-R>=expand("%:p") <CR>' \| pbcopy <CR> <CR>
 
+au BufRead,BufNewFile *.json set filetype=json
