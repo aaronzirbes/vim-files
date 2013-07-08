@@ -128,7 +128,8 @@ endfunction
 noremap <Leader>b :<C-U>Gblame<CR>
 noremap <Leader>d :<C-U>Gdiff<CR>
 noremap <Leader>s :<C-U>Gstatus<CR><C-W>20+
-noremap <Leader>l :<C-U>Glog<CR>
+noremap <Leader>l :<C-U>Gitv!<CR>
+noremap <Leader>L :<C-U>Gitv<CR>
 noremap <Leader>h :<C-U>Gbrowse<CR>
 noremap <Leader>c :<C-U>Gcommit<CR>
 noremap <Leader>t :<C-U>NERDTreeToggle<CR>
