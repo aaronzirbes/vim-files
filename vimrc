@@ -111,6 +111,9 @@ set shiftwidth=4
 set laststatus=2
 colorscheme torte
 
+" Vertical Column Limiter
+" highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+" match OverLength /\%121v.\+/
 set colorcolumn=121
 highlight ColorColumn ctermbg=2
 
@@ -132,6 +135,7 @@ noremap <Leader>l :<C-U>Gitv!<CR>
 noremap <Leader>L :<C-U>Gitv<CR>
 noremap <Leader>h :<C-U>Gbrowse<CR>
 noremap <Leader>c :<C-U>Gcommit<CR>
+noremap <Leader>d :<C-U>Gdiff<CR>
 noremap <Leader>t :<C-U>NERDTreeToggle<CR>
 noremap <Leader>f :<C-U>NERDTreeFind<CR>
 " Jira https://gist.github.com/2d860441b323e543d2bc
