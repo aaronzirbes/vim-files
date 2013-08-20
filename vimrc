@@ -11,10 +11,7 @@ call vundle#rc()
 " required! 
 Bundle 'gmarik/vundle'
 
-" My Bundles here:
-"
-" original repos on github
-Bundle 'tpope/vim-fugitive'
+" Vundle stuff
 Bundle 'kien/ctrlp.vim'
 Bundle 'aaronzirbes/grails-vim.git'
 Bundle 'majutsushi/tagbar'
@@ -22,6 +19,38 @@ Bundle 'vim-scripts/ZoomWin'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'gregsexton/gitv'
+Bundle 'sjl/badwolf'
+Bundle 'Shougo/neocomplcache.git'
+Bundle 'Shougo/neosnippet.git'
+Bundle 'freitass/todo.txt-vim'
+Bundle 'mhinz/vim-startify'
+Bundle 'mileszs/ack.vim'
+Bundle 'scrooloose/nerdcommenter.git'
+Bundle 'sjurgemeyer/vim-grails-import'
+Bundle 'tpope/vim-abolish.git'
+Bundle 'tpope/vim-dispatch'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired.git'
+Bundle 'vim-scripts/Align.git'
+
+" Maybe plugins
+"Bundle 'jeetsukumaran/vim-buffergator.git'
+"Bundle 'sjl/gundo.vim.git'
+
+" tagbar support for groovy
+ let g:tagbar_type_groovy = {
+ \ 'ctagstype' : 'groovy',
+ \ 'kinds' : [
+     \ 'p:package',
+     \ 'c:class',
+     \ 'i:interface',
+     \ 'f:function',
+     \ 'v:variables',
+     \ ]
+ \ }
+
 " After updating this list, run `vim +BundleInstall +qall`
 
 filetype plugin indent on
@@ -42,9 +71,6 @@ endif
 if has("autocmd")
   filetype plugin indent on
 endif
-
-" TagBar
-nmap <F8> :TagbarToggle<CR>
 
 " Ctrl-P ignore path
 set wildignore+=*.class,.git,.hg,.svn,test-integration/**,test-unit/**,**/target/classes/**,**/target/test-classes/**,**/target/test-reports/**.xml
@@ -127,24 +153,29 @@ endfunction
 " Spell check my stuff
 "set spell spelllang=en_us
 
-" Git Diff => <Leader>b
+" Fugitive
 noremap <Leader>b :<C-U>Gblame<CR>
 noremap <Leader>d :<C-U>Gdiff<CR>
 noremap <Leader>s :<C-U>Gstatus<CR><C-W>20+
-noremap <Leader>l :<C-U>Gitv!<CR>
-noremap <Leader>L :<C-U>Gitv<CR>
 noremap <Leader>h :<C-U>Gbrowse<CR>
 noremap <Leader>c :<C-U>Gcommit<CR>
 noremap <Leader>d :<C-U>Gdiff<CR>
-noremap <Leader>t :<C-U>NERDTreeToggle<CR>
-noremap <Leader>f :<C-U>NERDTreeFind<CR>
+" Gitv
+noremap <Leader>l :<C-U>Gitv!<CR>
+noremap <Leader>L :<C-U>Gitv<CR>
+" nertree
+noremap <Leader>nt :<C-U>NERDTreeToggle<CR>
+noremap <Leader>nf :<C-U>NERDTreeFind<CR>
+" tagbar
+noremap <Leader>t :<C-U>TagbarToggle<CR>
 " Jira https://gist.github.com/2d860441b323e543d2bc
 noremap <Leader>j :<C-U>!jira<CR> <CR>
 " Enable Spell check highting for buffer
-noremap <Leader>p :<C-U>set spell spelllang=en_us<CR>
+noremap <Leader>sp :<C-U>set spell spelllang=en_us<CR>
 " Copy selected range to Mac OS X copy buffer
 vnoremap <Leader>y :<C-U>!sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p '<C-R>=expand("%:p") <CR>' \|pbcopy <CR> <CR>
 " Copy entire file contents to Mac OS X copy buffer
 nnoremap <Leader>y :<C-U>!cat '<C-R>=expand("%:p") <CR>' \| pbcopy <CR> <CR>
-
+" JSON hilighting
 au BufRead,BufNewFile *.json set filetype=json
+
