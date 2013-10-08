@@ -34,6 +34,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired.git'
 Bundle 'vim-scripts/Align.git'
+Bundle 'derekwyatt/vim-scala'
 
 " Maybe plugins
 "Bundle 'jeetsukumaran/vim-buffergator.git'
@@ -126,7 +127,7 @@ endif
 " Search highlighting
 set hlsearch
 function! MapCr()
-    nnoremap <cr> :nohlsearch<cr>
+    nnoremap \ :nohlsearch<CR>
 endfunction
 call MapCr()
 
@@ -153,6 +154,18 @@ endfunction
 " Spell check my stuff
 "set spell spelllang=en_us
 
+" Search for selected text, forwards or backwards.
+vnoremap <silent> * :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy/<C-R><C-R>=substitute(
+  \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gV:call setreg('"', old_reg, old_regtype)<CR>
+vnoremap <silent> # :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy?<C-R><C-R>=substitute(
+  \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gV:call setreg('"', old_reg, old_regtype)<CR>
+
 " Fugitive
 noremap <Leader>b :<C-U>Gblame<CR>
 noremap <Leader>d :<C-U>Gdiff<CR>
@@ -169,13 +182,24 @@ noremap <Leader>nf :<C-U>NERDTreeFind<CR>
 " tagbar
 noremap <Leader>t :<C-U>TagbarToggle<CR>
 " Jira https://gist.github.com/2d860441b323e543d2bc
+
+" Groovy / Java find uses
+noremap <Leader>fu :<C-U>grep --include '*.groovy' --include '*.gsp' --include '*.gradle' -rE "\<<C-R>=expand("<cword>") <CR>\>" .<CR>:copen<CR>
+
+" Dispatch code execution
+noremap <Leader>rg :<C-U>Dispatch groovy '<C-R>=expand("%:p") <CR>'<CR>
+noremap <Leader>rt :<C-U>Dispatch grails test-app unit: '<C-R>=expand("%:t:r") <CR>'<CR>
+noremap <Leader>rr :<C-U>Dispatch grails test-app integration: '<C-R>=expand("%:t:r") <CR>'<CR>
+
 noremap <Leader>j :<C-U>!jira<CR> <CR>
 " Enable Spell check highting for buffer
 noremap <Leader>sp :<C-U>set spell spelllang=en_us<CR>
+
 " Copy selected range to Mac OS X copy buffer
 vnoremap <Leader>y :<C-U>!sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p '<C-R>=expand("%:p") <CR>' \|pbcopy <CR> <CR>
 " Copy entire file contents to Mac OS X copy buffer
 nnoremap <Leader>y :<C-U>!cat '<C-R>=expand("%:p") <CR>' \| pbcopy <CR> <CR>
+
 " JSON hilighting
 au BufRead,BufNewFile *.json set filetype=json
 
