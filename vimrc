@@ -166,11 +166,19 @@ vnoremap <silent> # :<C-U>
   \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
 
+" Split line
+nnoremap L i<CR><Esc>
+
+" vimdiff ignore whitespace
+set diffopt+=iwhite
+
 " Fugitive
 noremap <Leader>b :<C-U>Gblame<CR>
-noremap <Leader>d :<C-U>Gdiff<CR>
+noremap <Leader>di :<C-U>Gdiff<CR>
+noremap <Leader>dd :<C-U>Gvsplit develop:<C-R>=expand("%")<CR><CR>
 noremap <Leader>s :<C-U>Gstatus<CR><C-W>20+
 noremap <Leader>h :<C-U>Gbrowse<CR>
+vnoremap <Leader>h :<C-U>Gbrowse<CR>
 noremap <Leader>c :<C-U>Gcommit<CR>
 noremap <Leader>d :<C-U>Gdiff<CR>
 " Gitv
@@ -190,6 +198,7 @@ noremap <Leader>fu :<C-U>grep --include '*.groovy' --include '*.gsp' --include '
 noremap <Leader>rg :<C-U>Dispatch groovy '<C-R>=expand("%:p") <CR>'<CR>
 noremap <Leader>rt :<C-U>Dispatch grails test-app unit: '<C-R>=expand("%:t:r") <CR>'<CR>
 noremap <Leader>rr :<C-U>Dispatch grails test-app integration: '<C-R>=expand("%:t:r") <CR>'<CR>
+noremap <Leader>rb :<C-U>Dispatch gradle build<CR>
 
 noremap <Leader>j :<C-U>!jira<CR> <CR>
 " Enable Spell check highting for buffer
