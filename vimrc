@@ -19,11 +19,9 @@ Bundle 'vim-scripts/ZoomWin'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'gregsexton/gitv'
-Bundle 'sjl/badwolf'
 Bundle 'Shougo/neocomplcache.git'
 Bundle 'Shougo/neosnippet.git'
 Bundle 'freitass/todo.txt-vim'
-Bundle 'mhinz/vim-startify'
 Bundle 'mileszs/ack.vim'
 Bundle 'scrooloose/nerdcommenter.git'
 Bundle 'sjurgemeyer/vim-grails-import'
@@ -35,7 +33,11 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired.git'
 Bundle 'vim-scripts/Align.git'
 
+" MacVIM only
+Bundle 'sjl/badwolf'
+
 " Maybe plugins
+"Bundle 'mhinz/vim-startify'
 "Bundle 'jeetsukumaran/vim-buffergator.git'
 "Bundle 'sjl/gundo.vim.git'
 
@@ -135,7 +137,8 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 set laststatus=2
-colorscheme torte
+"colorscheme torte
+colorscheme slate
 
 " Vertical Column Limiter
 " highlight OverLength ctermbg=red ctermfg=white guibg=#592929
