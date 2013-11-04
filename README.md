@@ -1,11 +1,7 @@
-Aaron Zirbes' .vim/.vimrc
+Aaron Zirbes' VIM files
 =========================
 
 To use, run the following:
 
-    git clone https://github.com/aaronzirbes/vim-files.git ~/.vim
-    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-    ln -s ~/.vim/vimrc ~/.vimrc
-    ln -s ~/.vim/ctags ~/.ctags
-    vim +BundleInstall +qall
+    bash -c "$(curl -fsSkL raw.github.com/aaronzirbes/vim-files/master/go)"
 

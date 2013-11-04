@@ -1,0 +1,2 @@
+set fu
+colorscheme macvim
