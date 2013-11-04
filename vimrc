@@ -169,6 +169,9 @@ vnoremap <silent> # :<C-U>
 " Split line
 nnoremap L i<CR><Esc>
 
+" Grails Imports location
+let g:grails_import_list_file=$HOME . '/.vim/grails-import-list.txt'
+
 " vimdiff ignore whitespace
 set diffopt+=iwhite
 
