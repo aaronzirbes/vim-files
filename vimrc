@@ -199,8 +199,8 @@ noremap <Leader>fu :<C-U>grep --include '*.groovy' --include '*.gsp' --include '
 
 " Dispatch code execution
 noremap <Leader>rg :<C-U>Dispatch groovy '<C-R>=expand("%:p") <CR>'<CR>
-noremap <Leader>rt :<C-U>Dispatch grails test-app unit: '<C-R>=expand("%:t:r") <CR>'<CR>
-noremap <Leader>rr :<C-U>Dispatch grails test-app integration: '<C-R>=expand("%:t:r") <CR>'<CR>
+noremap <Leader>rt :<C-U>Dispatch grails test-app -Duser.timezone=UTC unit: '<C-R>=expand("%:t:r") <CR>'<CR>
+noremap <Leader>rr :<C-U>Dispatch grails test-app -Duser.timezone=UTC integration: '<C-R>=expand("%:t:r") <CR>'<CR>
 noremap <Leader>rb :<C-U>Dispatch gradle build<CR>
 
 noremap <Leader>j :<C-U>!jira<CR> <CR>
