@@ -34,9 +34,6 @@ Bundle 'tpope/vim-unimpaired.git'
 Bundle 'vim-scripts/Align.git'
 Bundle 'derekwyatt/vim-scala'
 
-" MacVIM only
-Bundle 'sjl/badwolf'
-
 " Maybe plugins
 "Bundle 'mhinz/vim-startify'
 "Bundle 'jeetsukumaran/vim-buffergator.git'
@@ -76,7 +73,7 @@ if has("autocmd")
 endif
 
 " Ctrl-P ignore path
-set wildignore+=*.class,.git,.hg,.svn,test-integration/**,test-unit/**,**/target/classes/**,**/target/test-classes/**,**/target/test-reports/**.xml
+set wildignore+=*.class,.git,.hg,.svn,**/target/classes/**,**/target/test-classes/**,**/target/test-reports/**.html,**/target/test-reports/**.xml,**/build/**
 
 " Exhuberant C-Tags
 set tags=.tags
@@ -138,8 +135,8 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 set laststatus=2
-"colorscheme torte
-colorscheme slate
+" colorscheme torte
+colorscheme koehler
 
 " Vertical Column Limiter
 " highlight OverLength ctermbg=red ctermfg=white guibg=#592929
@@ -199,13 +196,15 @@ noremap <Leader>fu :<C-U>grep --include '*.groovy' --include '*.gsp' --include '
 
 " Dispatch code execution
 noremap <Leader>rg :<C-U>Dispatch groovy '<C-R>=expand("%:p") <CR>'<CR>
-noremap <Leader>rt :<C-U>Dispatch grails test-app unit: '<C-R>=expand("%:t:r") <CR>'<CR>
-noremap <Leader>rr :<C-U>Dispatch grails test-app integration: '<C-R>=expand("%:t:r") <CR>'<CR>
+noremap <Leader>rr :<C-U>Dispatch ~/.vim/grails-gradle-test.sh '<C-R>=expand("%:t:r") <CR>'<CR>
+" noremap <Leader>rt :<C-U>Dispatch grails test-app unit: '<C-R>=expand("%:t:r") <CR>'<CR>
+" noremap <Leader>rr :<C-U>Dispatch grails test-app integration: '<C-R>=expand("%:t:r") <CR>'<CR>
 noremap <Leader>rb :<C-U>Dispatch gradle build<CR>
 
 noremap <Leader>j :<C-U>!jira<CR> <CR>
 " Enable Spell check highting for buffer
 noremap <Leader>sp :<C-U>set spell spelllang=en_us<CR>
+noremap <Leader>so :<C-U>set spell spelllang=<CR>
 
 " Copy selected range to Mac OS X copy buffer
 vnoremap <Leader>y :<C-U>!sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p '<C-R>=expand("%:p") <CR>' \|pbcopy <CR> <CR>
