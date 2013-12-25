@@ -1,2 +1,3 @@
 set fu
-colorscheme macvim
+"colorscheme macvim
+set guifont=Menlo:h10
