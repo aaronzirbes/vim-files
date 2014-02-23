@@ -110,8 +110,11 @@ set ruler
 set winwidth=130
 set winminwidth=12
 set winheight=25
-set winminheight=5
+set winminheight=15
 au VimEnter * set winheight=999
+
+"set errorformat=%A""%f: %l"" : %m,%+G%.%#
+set errorformat=%A""%f: %l"" : %m,%+%.%#
 
 " The number of lines before and after the cursor to show
 set scrolloff=3
@@ -200,9 +203,7 @@ noremap <Leader>fu :<C-U>grep --include '*.groovy' --include '*.gsp' --include '
 " Dispatch code execution
 noremap <Leader>rg :<C-U>Dispatch groovy '<C-R>=expand("%:p") <CR>'<CR>
 noremap <Leader>rr :<C-U>Dispatch ~/.vim/grails-gradle-test.sh '<C-R>=expand("%:t:r") <CR>'<CR>
-"noremap <Leader>rt :<C-U>Dispatch grails test-app -Duser.timezone=UTC unit: '<C-R>=expand("%:t:r") <CR>'<CR>
-"noremap <Leader>rr :<C-U>Dispatch grails test-app -Duser.timezone=UTC integration: '<C-R>=expand("%:t:r") <CR>'<CR>
-noremap <Leader>rb :<C-U>Dispatch gradle build<CR>
+noremap <Leader>rb :<C-U>Dispatch ~/.vim/grails-gradle-build.sh '<C-R>=expand("%:t:r") <CR>'<CR>
 
 noremap <Leader>j :<C-U>!jira<CR> <CR>
 " Enable Spell check highting for buffer
