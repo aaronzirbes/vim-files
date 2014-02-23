@@ -174,6 +174,7 @@ nnoremap L i<CR><Esc>
 
 " Grails Imports location
 let g:grails_import_list_file=$HOME . '/.vim/grails-import-list.txt'
+noremap <Leader>i :InsertImport <CR> :%s/  *$// <CR>
 
 " vimdiff ignore whitespace
 set diffopt+=iwhite
@@ -204,6 +205,9 @@ noremap <Leader>fu :<C-U>grep --include '*.groovy' --include '*.gsp' --include '
 noremap <Leader>rg :<C-U>Dispatch groovy '<C-R>=expand("%:p") <CR>'<CR>
 noremap <Leader>rr :<C-U>Dispatch ~/.vim/grails-gradle-test.sh '<C-R>=expand("%:t:r") <CR>'<CR>
 noremap <Leader>rb :<C-U>Dispatch ~/.vim/grails-gradle-build.sh '<C-R>=expand("%:t:r") <CR>'<CR>
+"noremap <Leader>rt :<C-U>Dispatch grails test-app -Duser.timezone=UTC unit: '<C-R>=expand("%:t:r") <CR>'<CR>
+"noremap <Leader>rr :<C-U>Dispatch grails test-app -Duser.timezone=UTC integration: '<C-R>=expand("%:t:r") <CR>'<CR>
+noremap <Leader>rn :<C-U>Dispatch gradle codenarcMain<CR>
 
 noremap <Leader>j :<C-U>!jira<CR> <CR>
 " Enable Spell check highting for buffer
