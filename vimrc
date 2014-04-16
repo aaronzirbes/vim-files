@@ -32,9 +32,13 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired.git'
 Bundle 'vim-scripts/Align.git'
-Bundle 'derekwyatt/vim-scala'
+
+" Experimenting
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'Kapeli/dash.vim'
 
 " Maybe plugins
+"Bundle 'derekwyatt/vim-scala'
 "Bundle 'mhinz/vim-startify'
 "Bundle 'jeetsukumaran/vim-buffergator.git'
 "Bundle 'sjl/gundo.vim.git'
@@ -107,7 +111,7 @@ set ruler
 
 "
 " COMMENT THESE OUT TO LET VIM WINDOWS BE THE DEFAULT SIZE
-set winwidth=130
+set winwidth=121
 set winminwidth=12
 set winheight=25
 set winminheight=15
@@ -209,6 +213,9 @@ set list listchars=tab:>-,trail:.,precedes:<,extends:>
 
 " Groovy / Java find uses
 noremap <Leader>fu :<C-U>grep --include '*.groovy' --include '*.gsp' --include '*.gradle' -rE "\<<C-R>=expand("<cword>") <CR>\>" .<CR>:copen<CR>
+
+" Dash lookup word under cusor
+noremap <Leader>jd :<C-U>Dash "\<<C-R>=expand("<cword>") <CR><CR>
 
 " Dispatch code execution
 noremap <Leader>rg :<C-U>Dispatch groovy '<C-R>=expand("%:p") <CR>'<CR>
