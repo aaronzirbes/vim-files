@@ -5,9 +5,12 @@
 mega_repo="git@github.com:bloomhealth/bloomhealth.git"
 test_class="${1}"
 
+echo 'Checking upstream remote...'
 upstream=`git remote -v |grep 'upstream.*\(push\)' |cut -f2 |sed -e 's/ .*//'`
+echo "Found ${upstream}."
 if [ "${upstream}" == "${mega_repo}" ]; then
     # Gradle build
+    echo "Detected bloom Mecca-Repo!"
 
     # Test file
     file=`find . -name ${test_class}.groovy`
@@ -37,6 +40,7 @@ if [ "${upstream}" == "${mega_repo}" ]; then
             -e "s#${root}/##"
 
 else
+    echo "Assuming grails build."
     # Grails Build
     phase="package"
 
