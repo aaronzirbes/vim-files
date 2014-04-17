@@ -215,7 +215,7 @@ set list listchars=tab:>-,trail:.,precedes:<,extends:>
 noremap <Leader>fu :<C-U>grep --include '*.groovy' --include '*.gsp' --include '*.gradle' -rE "\<<C-R>=expand("<cword>") <CR>\>" .<CR>:copen<CR>
 
 " Dash lookup word under cusor
-noremap <Leader>jd :<C-U>Dash "\<<C-R>=expand("<cword>") <CR><CR>
+noremap <Leader>jd :<C-U>Dash <C-R>=expand("<cword>") <CR><CR>
 
 " Dispatch code execution
 noremap <Leader>rg :<C-U>Dispatch groovy '<C-R>=expand("%:p") <CR>'<CR>
