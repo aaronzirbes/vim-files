@@ -209,7 +209,7 @@ vnoremap ; :
 vnoremap : ;
 
 " Really not a big fan of trailing whitespace
-set list listchars=tab:>-,trail:.,precedes:<,extends:>
+set list listchars=tab:>-,trail:·,precedes:<,extends:>
 
 " Groovy / Java find uses
 noremap <Leader>fu :<C-U>grep --include '*.groovy' --include '*.gsp' --include '*.gradle' -rE "\<<C-R>=expand("<cword>") <CR>\>" .<CR>:copen<CR>
