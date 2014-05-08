@@ -10,13 +10,14 @@ if [ "${upstream}" == "${mega_repo}" ]; then
     # Gradle build
 
     # Test file
-    file=`find . -name ${test_class}.groovy`
+    file=`find . -name ${test_class}.groovy | head -n 1`
 
     # Phase
+    echo "Determining test phase for ${file}"
     phase="test"
-    if ( echo "${file}" |grep -q -E '(bloom-domain|consumer)/test/unit'); then
+    if ( echo "${file}" |grep -q -E '(plugins|webapps)/.*/test/unit'); then
         phase="grailsTestUnit"
-    elif ( echo "${file}" | grep -q -E '(bloom-domain|consumer)/test/integration'); then
+    elif ( echo "${file}" | grep -q -E '(plugins|webapps)/.*/test/integration'); then
         phase="grailsTestIntegration"
     fi
 
