@@ -158,9 +158,6 @@ function! GenerateCTags()
 	execute ":!ctags -f " . file . "/.tags " . file . "/*"
 endfunction
 
-" Spell check my stuff
-set spell spelllang=en_us
-
 " Search for selected text, forwards or backwards.
 vnoremap <silent> * :<C-U>
   \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
@@ -216,6 +213,9 @@ noremap <Leader>fu :<C-U>grep --include '*.groovy' --include '*.gsp' --include '
 noremap <Leader>vs :<C-U>tag <C-R>=expand("<cword>") <CR>Spec<CR>
 noremap <Leader>vs :<C-U>tag <C-R>=expand("<cword>") <CR>Spec<CR>
 "noremap <Leader>vr :<C-U>find **/build/reports/tests/**/*.<C-R>=expand("%:t:r") <CR>.html<CR>
+
+" clean stacktraces
+nnoremap <Leader>st :<C-U>g/^\tat.*\.java.*/d<CR>:<C-U>g/^\tat.*(Unknown Source).*/d<CR>:<C-U>g/^\tat.*(Native Method).*/d<CR>
 
 " Dash lookup word under cusor
 noremap <Leader>jd :<C-U>Dash <C-R>=expand("<cword>") <CR><CR>

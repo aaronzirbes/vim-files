@@ -12,3 +12,6 @@ set guioptions=egmrt
 
 " Full Screen
 set fu
+
+" Spell check my stuff
+set spell spelllang=en_us
