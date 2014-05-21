@@ -31,6 +31,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired.git'
+Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/Align.git'
 
 " Experimenting
@@ -193,8 +194,9 @@ noremap <Leader>d :<C-U>Gdiff<CR>
 noremap <Leader>l :<C-U>Gitv!<CR>
 noremap <Leader>L :<C-U>Gitv<CR>
 " nertree
-noremap <Leader>nt :<C-U>NERDTreeToggle<CR>
-noremap <Leader>nf :<C-U>NERDTreeFind<CR>
+noremap <Leader>nt :<C-U>NERDTreeToggle<CR> :<C-U>vertical resize 58<CR>
+noremap <Leader>nf :<C-U>NERDTreeFind<CR> :<C-U>vertical resize 58<CR>
+
 " tagbar
 noremap <Leader>t :<C-U>TagbarToggle<CR>
 " Jira https://gist.github.com/2d860441b323e543d2bc
@@ -219,6 +221,9 @@ nnoremap <Leader>st :<C-U>g/^\tat.*\.java.*/d<CR>:<C-U>g/^\tat.*(Unknown Source)
 
 " Dash lookup word under cusor
 noremap <Leader>jd :<C-U>Dash <C-R>=expand("<cword>") <CR><CR>
+
+" Clean up stacktraces
+noremap <Leader>st :<C-U>g/^\tat .*\.java.*/d<CR>:<C-U>g/^tat .*\(Native Method\)/d<CR>:<C-U>g/^tat .*\(Unknown Source\)/d<CR>
 
 " Dispatch code execution
 noremap <Leader>rg :<C-U>Dispatch groovy '<C-R>=expand("%:p") <CR>'<CR>
