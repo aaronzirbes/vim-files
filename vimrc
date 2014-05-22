@@ -211,6 +211,12 @@ set list listchars=tab:>-,trail:·,precedes:<,extends:>
 
 " Groovy / Java find uses
 noremap <Leader>fu :<C-U>grep --include '*.groovy' --include '*.gsp' --include '*.gradle' -rE "\<<C-R>=expand("<cword>") <CR>\>" .<CR>:copen<CR>
+noremap <Leader>vs :<C-U>tag <C-R>=expand("<cword>") <CR>Spec<CR>
+noremap <Leader>vs :<C-U>tag <C-R>=expand("<cword>") <CR>Spec<CR>
+"noremap <Leader>vr :<C-U>find **/build/reports/tests/**/*.<C-R>=expand("%:t:r") <CR>.html<CR>
+
+" clean stacktraces
+nnoremap <Leader>st :<C-U>g/^\tat.*\.java.*/d<CR>:<C-U>g/^\tat.*(Unknown Source).*/d<CR>:<C-U>g/^\tat.*(Native Method).*/d<CR>
 
 " Dash lookup word under cusor
 noremap <Leader>jd :<C-U>Dash <C-R>=expand("<cword>") <CR><CR>
@@ -228,8 +234,8 @@ noremap <Leader>rn :<C-U>Dispatch gradle codenarcMain<CR>
 
 noremap <Leader>j :<C-U>!jira<CR> <CR>
 " Enable Spell check highting for buffer
-noremap <Leader>sp :<C-U>set spell spelllang=en_us<CR>
-noremap <Leader>so :<C-U>set spell spelllang=<CR>
+noremap <Leader>sc :<C-U>set spell spelllang=en_us<CR>
+noremap <Leader>sn :<C-U>set spell spelllang=<CR>
 
 " Copy selected range to Mac OS X copy buffer
 vnoremap <Leader>y :<C-U>!sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p '<C-R>=expand("%:p") <CR>' \|pbcopy <CR> <CR>
