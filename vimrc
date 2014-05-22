@@ -1,6 +1,5 @@
 " Aaron's Global Defaults
 
-
 " Bundle Plugins!
 set nocompatible
 filetype off
@@ -155,12 +154,9 @@ highlight ColorColumn ctermbg=2
 " ctags
 command! Tag :call GenerateCTags()
 function! GenerateCTags() 
-	let file = expand("%:p:h")
-	execute ":!ctags -f " . file . "/.tags " . file . "/*"
+    let file = expand("%:p:h")
+    execute ":!ctags -f " . file . "/.tags " . file . "/*"
 endfunction
-
-" Spell check my stuff
-"set spell spelllang=en_us
 
 " Search for selected text, forwards or backwards.
 vnoremap <silent> * :<C-U>
@@ -220,7 +216,7 @@ noremap <Leader>fu :<C-U>grep --include '*.groovy' --include '*.gsp' --include '
 noremap <Leader>jd :<C-U>Dash <C-R>=expand("<cword>") <CR><CR>
 
 " Clean up stacktraces
-noremap <Leader>st :<C-U>g/^\tat .*\.java.*/d<CR>:<C-U>g/^tat .*\(Native Method\)/d<CR>:<C-U>g/^tat .*\(Unknown Source\)/d<CR>
+noremap <Leader>st :<C-U>g/^\tat .*\(\.java:[0-9]\+\\|(Native Method)\\|(Unknown Source)\).*/d<CR>
 
 " Dispatch code execution
 noremap <Leader>rg :<C-U>Dispatch groovy '<C-R>=expand("%:p") <CR>'<CR>
