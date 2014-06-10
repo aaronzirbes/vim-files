@@ -247,6 +247,15 @@ vnoremap <Leader>y :<C-U>!sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p '<
 " Copy entire file contents to Mac OS X copy buffer
 nnoremap <Leader>y :<C-U>!cat '<C-R>=expand("%:p") <CR>' \| pbcopy <CR> <CR>
 
+" Navigate next buffer / previous buffer
+nnoremap <C-n> :<C-U>bn<CR>
+nnoremap <C-b> :<C-U>bp<CR>
+" Window navigation
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
 " JSON hilighting
 au BufRead,BufNewFile *.json set filetype=json
 
