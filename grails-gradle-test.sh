@@ -12,6 +12,10 @@ if [ "${upstream}" == "${mega_repo}" ]; then
     # Test file
     file=`find . -name ${test_class}.groovy | head -n 1 | sed -E 's#^\./##'`
 
+    if [ "${2}" == "debug" ]; then
+        debug="-Dtest.debug=true"
+    fi
+
     # Phase
     echo "Determining test phase for ${file}"
     phase="test"
@@ -29,7 +33,7 @@ if [ "${upstream}" == "${mega_repo}" ]; then
     fi
 
     echo "gradle -p ${project} -Dtest.single=${test_class} ${phase}"
-    gradle -p ${project} -Dtest.reportFormat=html,xml -Dtest.single=${test_class} ${phase}
+    gradle -p ${project} -Dtest.reportFormat=html,xml -Dtest.single=${test_class} ${phase} ${debug}
 
     find ${project}/build -name "*${test_class}.xml"
 

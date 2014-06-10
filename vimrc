@@ -32,6 +32,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired.git'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/Align.git'
+Bundle 'altercation/vim-colors-solarized.git'
 
 " Experimenting
 Bundle 'rizzatti/funcoo.vim'
@@ -143,7 +144,8 @@ set tabstop=4
 set shiftwidth=4
 set laststatus=2
 " colorscheme torte
-colorscheme koehler
+"colorscheme koehler
+colorscheme solarized
 
 " Vertical Column Limiter
 " highlight OverLength ctermbg=red ctermfg=white guibg=#592929
@@ -193,8 +195,9 @@ noremap <Leader>d :<C-U>Gdiff<CR>
 noremap <Leader>l :<C-U>Gitv!<CR>
 noremap <Leader>L :<C-U>Gitv<CR>
 " nertree
-noremap <Leader>nt :<C-U>NERDTreeToggle<CR> :<C-U>vertical resize 58<CR>
-noremap <Leader>nf :<C-U>NERDTreeFind<CR> :<C-U>vertical resize 58<CR>
+let g:NERDTreeWinSize = 40
+noremap <Leader>nt :<C-U>NERDTreeToggle<CR>
+noremap <Leader>nf :<C-U>NERDTreeFind<CR>
 
 " tagbar
 noremap <Leader>t :<C-U>TagbarToggle<CR>
@@ -206,8 +209,10 @@ nnoremap : ;
 vnoremap ; :
 vnoremap : ;
 
-" Really not a big fan of trailing whitespace
+" Really not a big fan of trailing whitespace, mark it red
 set list listchars=tab:>-,trail:·,precedes:<,extends:>
+
+noremap <Leader>hr <C-U>set nolist
 
 " Groovy / Java find uses
 noremap <Leader>fu :<C-U>grep --include '*.groovy' --include '*.gsp' --include '*.gradle' -rE "\<<C-R>=expand("<cword>") <CR>\>" .<CR>:copen<CR>
