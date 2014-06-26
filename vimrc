@@ -33,6 +33,7 @@ Bundle 'tpope/vim-unimpaired.git'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/Align.git'
 Bundle 'altercation/vim-colors-solarized.git'
+Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 
 " Experimenting
 Bundle 'rizzatti/funcoo.vim'
@@ -79,6 +80,7 @@ endif
 
 " Ctrl-P ignore path
 set wildignore+=*.class,.git,.hg,.svn,**/target/classes/**,**/target/test-classes/**,**/target/test-reports/**.html,**/target/test-reports/**.xml,**/build/**
+let g:ctrlp_cmd = 'CtrlPTag'
 
 " Exhuberant C-Tags
 set tags=.tags
@@ -143,9 +145,11 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 set laststatus=2
+set background=dark
 " colorscheme torte
 "colorscheme koehler
-colorscheme solarized
+"colorscheme solarized
+colorscheme Tomorrow-Night
 
 " Vertical Column Limiter
 " highlight OverLength ctermbg=red ctermfg=white guibg=#592929
