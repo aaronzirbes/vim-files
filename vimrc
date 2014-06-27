@@ -155,6 +155,8 @@ set background=dark
 "colorscheme solarized
 colorscheme Tomorrow-Night
 
+" destroy all trailing whitespace
+autocmd BufWritePre *.groovy :%s/\s\+$//e
 
 " Vertical Column Limiter
 " highlight OverLength ctermbg=red ctermfg=white guibg=#592929
