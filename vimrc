@@ -151,14 +151,16 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 set laststatus=2
+set background=dark
+"set background=light
 
 "colorscheme torte
 "colorscheme koehler
 "colorscheme solarized
 colorscheme Tomorrow-Night
 
-set background=dark
-"set background=light
+" destroy all trailing whitespace
+autocmd BufWritePre *.groovy :%s/\s\+$//e
 
 " Vertical Column Limiter
 " highlight OverLength ctermbg=red ctermfg=white guibg=#592929
