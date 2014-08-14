@@ -34,6 +34,10 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/Align.git'
 Bundle 'altercation/vim-colors-solarized.git'
 Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+Bundle "pangloss/vim-javascript"
+
+" Enables HTML/CSS syntax highlighting in your JavaScript file.
+"set javascript_enable_domhtmlcss
 
 " Experimenting
 Bundle 'rizzatti/funcoo.vim'
