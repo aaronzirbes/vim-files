@@ -206,10 +206,10 @@ noremap <Leader>h :<C-U>Gbrowse<CR>
 vnoremap <Leader>h :<C-U>Gbrowse<CR>
 noremap <Leader>c :<C-U>Gcommit<CR>
 noremap <Leader>d :<C-U>Gdiff<CR>
-" Gitv
+" GitV
 noremap <Leader>l :<C-U>Gitv!<CR>
 noremap <Leader>L :<C-U>Gitv<CR>
-" nertree
+" NerdTree
 let g:NERDTreeWinSize = 40
 noremap <Leader>nt :<C-U>NERDTreeToggle<CR>
 noremap <Leader>nf :<C-U>NERDTreeFind<CR>
@@ -229,32 +229,17 @@ set list listchars=tab:>-,trail:·,precedes:<,extends:>
 
 noremap <Leader>hr <C-U>set nolist
 
-" Groovy / Java find uses
-noremap <Leader>fu :<C-U>grep --include '*.groovy' --include '*.gsp' --include '*.gradle' -rE "\<<C-R>=expand("<cword>") <CR>\>" .<CR>:copen<CR>
-noremap <Leader>vs :<C-U>tag <C-R>=expand("<cword>") <CR>Spec<CR>
-noremap <Leader>vs :<C-U>tag <C-R>=expand("<cword>") <CR>Spec<CR>
-"noremap <Leader>vr :<C-U>find **/build/reports/tests/**/*.<C-R>=expand("%:t:r") <CR>.html<CR>
-
 " clean stacktraces
 nnoremap <Leader>st :<C-U>g/^\tat.*\.java.*/d<CR>:<C-U>g/^\tat.*(Unknown Source).*/d<CR>:<C-U>g/^\tat.*(Native Method).*/d<CR>
+"noremap <Leader>st :<C-U>g/^\tat .*\(\.java:[0-9]\+\\|(Native Method)\\|(Unknown Source)\).*/d<CR>
 
-" Dash lookup word under cusor
+" Dash lookup word under cursor
 noremap <Leader>jd :<C-U>Dash <C-R>=expand("<cword>") <CR><CR>
 
-" Clean up stacktraces
-noremap <Leader>st :<C-U>g/^\tat .*\(\.java:[0-9]\+\\|(Native Method)\\|(Unknown Source)\).*/d<CR>
-
-" Dispatch code execution
-noremap <Leader>rg :<C-U>Dispatch groovy '<C-R>=expand("%:p") <CR>'<CR>
-noremap <Leader>rr :<C-U>Dispatch ~/.vim/grails-gradle-test.sh '<C-R>=expand("%:t:r") <CR>'<CR>
-noremap <Leader>ts :<C-U>tag <C-R>=expand("%:t:r") <CR>Spec<CR>
-noremap <Leader>rb :<C-U>Dispatch ~/.vim/grails-gradle-build.sh '<C-R>=expand("%:t:r") <CR>'<CR>
-"noremap <Leader>rt :<C-U>Dispatch grails test-app -Duser.timezone=UTC unit: '<C-R>=expand("%:t:r") <CR>'<CR>
-"noremap <Leader>rr :<C-U>Dispatch grails test-app -Duser.timezone=UTC integration: '<C-R>=expand("%:t:r") <CR>'<CR>
-noremap <Leader>rn :<C-U>Dispatch gradle codenarcMain<CR>
-
+" JIRA
 noremap <Leader>j :<C-U>!jira<CR> <CR>
-" Enable Spell check highting for buffer
+
+" Enable Spell check highlighting for buffer
 noremap <Leader>sc :<C-U>set spell spelllang=en_us<CR>
 noremap <Leader>sn :<C-U>set spell spelllang=<CR>
 
@@ -272,6 +257,6 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" JSON hilighting
+" JSON highlighting
 au BufRead,BufNewFile *.json set filetype=json
 
