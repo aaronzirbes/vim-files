@@ -44,10 +44,13 @@ Bundle 'rizzatti/funcoo.vim'
 Bundle 'Kapeli/dash.vim'
 
 " Maybe plugins
-"Bundle 'derekwyatt/vim-scala'
+Bundle 'derekwyatt/vim-scala'
 "Bundle 'mhinz/vim-startify'
 "Bundle 'jeetsukumaran/vim-buffergator.git'
 "Bundle 'sjl/gundo.vim.git'
+
+" Status line
+set statusline=%t\ [%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 
 " tagbar support for groovy
  let g:tagbar_type_groovy = {
