@@ -11,7 +11,7 @@ noremap <Leader>B :<C-U>set guifont=Menlo:h32 <CR>
 set guioptions=egmrt
 
 " Full Screen
-set fu
+"set fu
 
 " Spell check my stuff
 set spell spelllang=en_us
