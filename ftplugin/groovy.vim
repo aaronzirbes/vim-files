@@ -4,6 +4,7 @@ nnoremap <Leader>rg :<C-U>Dispatch groovy '<C-R>=expand("%:p") <CR>'<CR>
 nnoremap <Leader>rr :<C-U>Dispatch ~/.vim/grails-gradle-test.sh '<C-R>=expand("%:t:r") <CR>'<CR>
 nnoremap <Leader>rb :<C-U>Dispatch ~/.vim/grails-gradle-build.sh '<C-R>=expand("%:t:r") <CR>'<CR>
 nnoremap <Leader>rn :<C-U>Dispatch gradle codenarcMain<CR>
+nnoremap <Leader>gr :<C-U>Dispatch gradle run<CR>
 
 " Jump to Spec file
 nnoremap <Leader>ts :<C-U>tag <C-R>=expand("%:t:r") <CR>Spec<CR>

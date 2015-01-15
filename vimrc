@@ -35,6 +35,12 @@ Bundle 'vim-scripts/Align.git'
 Bundle 'altercation/vim-colors-solarized.git'
 Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Bundle "pangloss/vim-javascript"
+Bundle "jplaut/vim-arduino-ino"
+Bundle "elzr/vim-json"
+" After updating this list, run `vim +BundleInstall +qall`
+
+"let g:vim_arduino_library_path = /Applications/Arduino.app/Contents/Java
+"let g:vim_arduino_serial_port = /my/serial/port
 
 " Enables HTML/CSS syntax highlighting in your JavaScript file.
 "set javascript_enable_domhtmlcss
@@ -50,7 +56,7 @@ Bundle 'derekwyatt/vim-scala'
 "Bundle 'sjl/gundo.vim.git'
 
 " Status line
-set statusline=%t\ [%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
+"set statusline=%t\ [%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 
 " tagbar support for groovy
  let g:tagbar_type_groovy = {
@@ -64,7 +70,6 @@ set statusline=%t\ [%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
      \ ]
  \ }
 
-" After updating this list, run `vim +BundleInstall +qall`
 
 filetype plugin indent on
 
@@ -88,7 +93,7 @@ endif
 " Ctrl-P ignore path
 set wildignore+=*.class,.git,.hg,.svn,**/target/classes/**,**/target/test-classes/**,**/target/test-reports/**.html,**/target/test-reports/**.xml,**/build/**
 let g:ctrlp_cmd = 'CtrlPTag'
-nnoremap <C-P> :<C-U>CtrlP <CR>
+nnoremap <C-i> :<C-U>CtrlP <CR>
 
 
 " Exhuberant C-Tags
@@ -149,13 +154,16 @@ function! MapCr()
 endfunction
 call MapCr()
 
-" My Settings
+" my settings
 set expandtab
 set tabstop=4
 set shiftwidth=4
 set laststatus=2
 set background=dark
 "set background=light
+"
+
+
 
 "colorscheme torte
 "colorscheme koehler
