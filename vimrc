@@ -31,12 +31,15 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired.git'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'groenewege/vim-less'
 Bundle 'vim-scripts/Align.git'
 Bundle 'altercation/vim-colors-solarized.git'
 Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+Bundle 'nicholasc/vim-seti'
 Bundle "pangloss/vim-javascript"
 Bundle "jplaut/vim-arduino-ino"
 Bundle "elzr/vim-json"
+Bundle "chrisbra/csv.vim"
 " After updating this list, run `vim +BundleInstall +qall`
 
 "let g:vim_arduino_library_path = /Applications/Arduino.app/Contents/Java
@@ -267,6 +270,12 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
+
+" Window resizing
+nnoremap <C-7> :resize +2
+nnoremap <C-8> :vertical:resize +2
+nnoremap <C-9> :vertical:resize -2
+nnoremap <C-0> :resize +2
 
 " JSON highlighting
 au BufRead,BufNewFile *.json set filetype=json

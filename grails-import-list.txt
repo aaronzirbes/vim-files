@@ -1,6 +1,8 @@
 " I stole this from https://raw.github.com/sjurgemeyer/dotfiles/master/.vim/config/grailsImportList.txt
 " Thanks Shaun!
 
+java.util.regex.Pattern
+
 " Groovy
 groovy.beans.Bindable
 groovy.beans.BindableASTTransformation
@@ -266,6 +268,7 @@ groovy.time.Duration
 groovy.time.TimeCategory
 groovy.time.TimeDatumDependentDuration
 groovy.time.TimeDuration
+groovy.transform.EqualsAndHashCode
 groovy.transform.CompileStatic
 groovy.transform.IndexedProperty
 groovy.transform.InheritConstructors
@@ -349,7 +352,6 @@ groovy.util.ScriptException
 groovy.util.XmlNodePrinter
 groovy.util.XmlParser
 groovy.util.XmlSlurper
-groovy.util.logging.Slf4j
 groovy.util.slurpersupport.Attribute
 groovy.util.slurpersupport.Attributes
 groovy.util.slurpersupport.FilteredAttributes
@@ -684,8 +686,6 @@ groovyjarjarcommonscli.PosixParser
 groovyjarjarcommonscli.TypeHandler
 groovyjarjarcommonscli.UnrecognizedOptionException
 groovyjarjarcommonscli.Util
-javax.inject.Inject
-javax.inject.Named
 org.codehaus.groovy.GroovyBugError
 org.codehaus.groovy.GroovyException
 org.codehaus.groovy.GroovyExceptionInterface
@@ -2294,10 +2294,129 @@ com.fasterxml.jackson.annotation.ObjectIdGenerator
 com.fasterxml.jackson.annotation.ObjectIdGenerators
 com.fasterxml.jackson.annotation.PropertyAccessor
 
+
+" Square Retrofit
+retrofit.android.AndroidMockValuePersistence
+retrofit.MockHttpException
+retrofit.MockRestAdapter
+retrofit.MockRestAdapter
+retrofit.android.AndroidApacheClient
+retrofit.android.AndroidLog
+retrofit.android.MainThreadExecutor
+retrofit.appengine.UrlFetchClient
+retrofit.client.ApacheClient
+retrofit.client.Header
+retrofit.client.OkClient
+retrofit.client.Request
+retrofit.client.Response
+retrofit.client.UrlConnectionClient
+retrofit.converter.ConversionException
+retrofit.converter.GsonConverter
+retrofit.Endpoints
+retrofit.mime.FormUrlEncodedTypedOutput
+retrofit.mime.MimeUtil
+retrofit.mime.MultipartTypedOutput
+retrofit.mime.TypedByteArray
+retrofit.mime.TypedFile
+retrofit.mime.TypedString
+retrofit.Profiler
+retrofit.ResponseCallback
+retrofit.RestAdapter
+retrofit.RestAdapter
+retrofit.RetrofitError
+
+# Square OkHTTP
+com.squareup.okhttp.internal.spdy.SpdyServer
+com.squareup.okhttp.internal.SslContextBuilder
+com.squareup.okhttp.mockwebserver.Dispatcher
+com.squareup.okhttp.mockwebserver.MockResponse
+com.squareup.okhttp.mockwebserver.MockWebServer
+com.squareup.okhttp.mockwebserver.PushPromise
+com.squareup.okhttp.mockwebserver.RecordedRequest
+com.squareup.okhttp.internal.huc.CacheAdapter
+com.squareup.okhttp.internal.huc.JavaApiConverter
+com.squareup.okhttp.apache.OkApacheClient
+com.squareup.okhttp.testing.RecordingHostnameVerifier
+com.squareup.okhttp.internal.huc.HttpsURLConnectionImpl
+com.squareup.okhttp.OkUrlFactory
+com.squareup.okhttp.internal.ws.RealWebSocket
+com.squareup.okhttp.internal.ws.WebSocketProtocol
+com.squareup.okhttp.internal.ws.WebSocketReader
+com.squareup.okhttp.internal.ws.WebSocketWriter
+com.squareup.okhttp.ws.WebSocketCall
+com.squareup.okhttp.Address
+com.squareup.okhttp.Cache
+com.squareup.okhttp.CacheControl
+com.squareup.okhttp.CacheControl
+com.squareup.okhttp.CertificatePinner
+com.squareup.okhttp.CertificatePinner
+com.squareup.okhttp.Challenge
+com.squareup.okhttp.Connection
+com.squareup.okhttp.ConnectionPool
+com.squareup.okhttp.ConnectionSpec
+com.squareup.okhttp.ConnectionSpec
+com.squareup.okhttp.Credentials
+com.squareup.okhttp.Dispatcher
+com.squareup.okhttp.FormEncodingBuilder
+com.squareup.okhttp.Handshake
+com.squareup.okhttp.Headers
+com.squareup.okhttp.Headers
+com.squareup.okhttp.HttpUrl
+com.squareup.okhttp.HttpUrl
+com.squareup.okhttp.internal.ConnectionSpecSelector
+com.squareup.okhttp.internal.DiskLruCache
+com.squareup.okhttp.internal.DiskLruCache
+com.squareup.okhttp.internal.DiskLruCache
+com.squareup.okhttp.internal.http.AuthenticatorAdapter
+com.squareup.okhttp.internal.http.CacheStrategy
+com.squareup.okhttp.internal.http.CacheStrategy
+com.squareup.okhttp.internal.http.HeaderParser
+com.squareup.okhttp.internal.http.HttpConnection
+com.squareup.okhttp.internal.http.HttpDate
+com.squareup.okhttp.internal.http.HttpEngine
+com.squareup.okhttp.internal.http.HttpMethod
+com.squareup.okhttp.internal.http.HttpTransport
+com.squareup.okhttp.internal.http.OkHeaders
+com.squareup.okhttp.internal.http.RealResponseBody
+com.squareup.okhttp.internal.http.RequestException
+com.squareup.okhttp.internal.http.RequestLine
+com.squareup.okhttp.internal.http.RetryableSink
+com.squareup.okhttp.internal.http.RouteException
+com.squareup.okhttp.internal.http.RouteSelector
+com.squareup.okhttp.internal.http.SocketConnector
+com.squareup.okhttp.internal.http.SpdyTransport
+com.squareup.okhttp.internal.http.StatusLine
+com.squareup.okhttp.internal.Internal
+com.squareup.okhttp.internal.NamedRunnable
+com.squareup.okhttp.internal.RouteDatabase
+com.squareup.okhttp.internal.spdy.Header
+com.squareup.okhttp.internal.spdy.Http2
+com.squareup.okhttp.internal.spdy.Ping
+com.squareup.okhttp.internal.spdy.Settings
+com.squareup.okhttp.internal.spdy.Spdy3
+com.squareup.okhttp.internal.spdy.SpdyConnection
+com.squareup.okhttp.internal.spdy.SpdyConnection
+com.squareup.okhttp.internal.spdy.SpdyStream
+com.squareup.okhttp.internal.tls.OkHostnameVerifier
+com.squareup.okhttp.internal.Util
+com.squareup.okhttp.MediaType
+com.squareup.okhttp.MultipartBuilder
+com.squareup.okhttp.Request
+com.squareup.okhttp.Request
+com.squareup.okhttp.RequestBody
+com.squareup.okhttp.Response
+com.squareup.okhttp.Response
+com.squareup.okhttp.ResponseBody
+com.squareup.okhttp.Route
+
+" PeopleNet stuff
+com.peoplenet.common.PeopleNetObjectMapperBuilder
+
 " Slf4j
 groovy.util.logging.Slf4j
 
 " DI
+javax.annotation.PostConstruct
 javax.inject.Inject
 javax.inject.Named
 javax.inject.Qualifier
