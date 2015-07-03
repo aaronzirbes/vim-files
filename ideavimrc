@@ -1,0 +1,34 @@
+" Tired of hitting shift
+nnoremap ; :
+nnoremap : ;
+vnoremap ; :
+vnoremap : ;
+
+" Really not a big fan of trailing whitespace, mark it red
+set list listchars=tab:>-,trail:·,precedes:<,extends:>
+
+noremap <Leader>hr <C-U>set nolist
+
+" Vertical Column Limiter
+" highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+" match OverLength /\%121v.\+/
+set colorcolumn=121
+highlight ColorColumn ctermbg=2
+
+" my settings
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set laststatus=2
+set background=dark
+
+let mapleader=","
+
+" Navigate next buffer / previous buffer
+nnoremap <C-n> :<C-U>bn<CR>
+nnoremap <C-b> :<C-U>bp<CR>
+" Window navigation
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
