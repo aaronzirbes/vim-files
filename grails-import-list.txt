@@ -2,6 +2,8 @@
 " Thanks Shaun!
 
 java.util.regex.Pattern
+java.util.concurrent.ConcurrentSkipListSet
+java.util.concurrent.ConcurrentHashMap
 
 " Groovy
 groovy.beans.Bindable
@@ -2326,6 +2328,7 @@ retrofit.RestAdapter
 retrofit.RetrofitError
 
 # Square OkHTTP
+com.squareup.okhttp.OkHttpClient
 com.squareup.okhttp.internal.spdy.SpdyServer
 com.squareup.okhttp.internal.SslContextBuilder
 com.squareup.okhttp.mockwebserver.Dispatcher

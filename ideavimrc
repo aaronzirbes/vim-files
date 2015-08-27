@@ -22,6 +22,9 @@ set shiftwidth=4
 set laststatus=2
 set background=dark
 
+set number
+"set numberwidth=5
+
 let mapleader=","
 
 " Navigate next buffer / previous buffer
