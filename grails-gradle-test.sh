@@ -13,7 +13,6 @@ else
     echo "Finding test class..."
     file=`find . -name ${test_class}.groovy -or -name ${test_class}.java | head -n 1 | sed -E 's#^\./##'`
 
-
     echo "Found file: ${file}"
 
     if [ "${2}" == "debug" ]; then

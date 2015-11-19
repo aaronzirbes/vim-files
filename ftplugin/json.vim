@@ -3,4 +3,4 @@
 " 2 space tabbing
 setlocal sw=2 sts=2 et
 
-com! FormatJSON %!python -m json.tool |sed -e 's/": /" : /'
+com! FormatJSON %!python -m json.tool

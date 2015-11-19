@@ -1,6 +1,7 @@
 
 " Default tiny font
-set guifont=Menlo:h10
+"set guifont=Menlo:h10
+set guifont=Hack-Regular:h10
 
 "colorscheme macvim
 

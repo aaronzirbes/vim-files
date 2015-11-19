@@ -1,3 +1,5 @@
+--exclude=.git
+--exclude=node_modules
 --langdef=groovy
 --langmap=groovy:.groovy
 --regex-groovy=/^[ \t]*[(private|public|protected)( \t)]*[A-Za-z0-9_<>]+[ \t]+([a-z_][A-Za-z0-9_]+)[ \t]*\(/\1/f,function,functions/
