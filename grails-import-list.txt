@@ -65,6 +65,30 @@ java.util.concurrent.ExecutionException
 java.util.concurrent.RejectedExecutionException
 java.util.concurrent.TimeoutException
 
+" RDF stuff
+org.apache.jena.vocabulary.DB
+org.apache.jena.vocabulary.DCTerms
+org.apache.jena.vocabulary.DCTypes
+org.apache.jena.vocabulary.DC_10
+org.apache.jena.vocabulary.DC_11
+org.apache.jena.vocabulary.LocationMappingVocab
+org.apache.jena.vocabulary.OWL
+org.apache.jena.vocabulary.OWL2
+org.apache.jena.vocabulary.OWLResults
+org.apache.jena.vocabulary.OWLTest
+org.apache.jena.vocabulary.OntDocManagerVocab
+org.apache.jena.vocabulary.OntEventsVocab
+org.apache.jena.vocabulary.RDF
+org.apache.jena.vocabulary.RDFS
+org.apache.jena.vocabulary.RDFSyntax
+org.apache.jena.vocabulary.RDFTest
+org.apache.jena.vocabulary.RSS
+org.apache.jena.vocabulary.SKOS
+org.apache.jena.vocabulary.SKOSXL
+org.apache.jena.vocabulary.VCARD
+org.apache.jena.vocabulary.XSD
+
+
 javax.validation.ConstraintViolation
 javax.validation.Validation
 javax.validation.ValidationException
@@ -342,6 +366,7 @@ groovy.time.TimeDatumDependentDuration
 groovy.time.TimeDuration
 groovy.transform.EqualsAndHashCode
 groovy.transform.CompileStatic
+groovy.transform.TypeCheckingMode
 groovy.transform.IndexedProperty
 groovy.transform.InheritConstructors
 groovy.transform.Synchronized
@@ -2398,6 +2423,8 @@ com.squareup.okhttp.Route
 
 " PeopleNet stuff
 com.peoplenet.common.PeopleNetObjectMapperBuilder
+com.peoplenet.common.JsonHelper
+com.peoplenet.retrofit.client.ClientApiBuilder
 
 " Slf4j
 groovy.util.logging.Slf4j
