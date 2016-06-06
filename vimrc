@@ -32,16 +32,26 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired.git'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'groenewege/vim-less'
 Bundle 'vim-scripts/Align.git'
 Bundle 'altercation/vim-colors-solarized.git'
 Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
-Bundle 'nicholasc/vim-seti'
 Bundle "pangloss/vim-javascript"
-Bundle "jplaut/vim-arduino-ino"
 Bundle "elzr/vim-json"
-Bundle "chrisbra/csv.vim"
+" Bundle "chrisbra/csv.vim"
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'udalov/kotlin-vim'
+
+" Requires:
+"https://github.com/editorconfig/editorconfig-core-c
+
+" Occasional Plugins
+"Bundle "jplaut/vim-arduino-ino"
+"Bundle "powerman/vim-plugin-AnsiEsc"
+
+"Bundle "scrooloose/syntastic"
+
 " After updating this list, run `vim +BundleInstall +qall`
+" After updating this list, run `vim +PluginInstall +qall`
 
 "let g:vim_arduino_library_path = /Applications/Arduino.app/Contents/Java
 "let g:vim_arduino_serial_port = /my/serial/port
@@ -49,15 +59,24 @@ Bundle "chrisbra/csv.vim"
 " Enables HTML/CSS syntax highlighting in your JavaScript file.
 "set javascript_enable_domhtmlcss
 
+" Syntastic syntax checking
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+
 " Experimenting
-Bundle 'rizzatti/funcoo.vim'
 Bundle 'Kapeli/dash.vim'
 
 " Maybe plugins
-Bundle 'derekwyatt/vim-scala'
-"Bundle 'mhinz/vim-startify'
-"Bundle 'jeetsukumaran/vim-buffergator.git'
-"Bundle 'sjl/gundo.vim.git'
+" Bundle 'derekwyatt/vim-scala'
+" Bundle 'mhinz/vim-startify'
+" Bundle 'jeetsukumaran/vim-buffergator.git'
+" Bundle 'sjl/gundo.vim.git'
 
 " Status line
 "set statusline=%t\ [%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
@@ -231,6 +250,7 @@ noremap <Leader>nf :<C-U>NERDTreeFind<CR>
 
 " tagbar
 noremap <Leader>t :<C-U>TagbarToggle<CR>
+noremap <Leader>tb :<C-U>!ctags -R<CR>
 " Jira https://gist.github.com/2d860441b323e543d2bc
 
 " Tired of hitting shift
