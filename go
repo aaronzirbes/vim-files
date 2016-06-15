@@ -14,6 +14,11 @@ else
     echo "~/.vim/bundle/vundle already exists. skipping."
 fi
 
+if [ ! -e ~/.config/nvim ]; then
+    echo "symlinking ~/.vim to ~/.config/nvim"
+    ln -s ~/.vim ~/.config/nvim
+fi
+
 if [ ! -e ~/.vimrc ] && [ ! -e ~/.ctags ] && [ ! -e ~/.gvimrc ]; then
     echo "symlinking ~/.vimrc ~/.ctags ~/.gvimrc"
     ln -s ~/.vim/vimrc ~/.vimrc
