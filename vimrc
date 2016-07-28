@@ -295,21 +295,28 @@ nnoremap <C-b> :<C-U>bp<CR>
 nnoremap <C-B> :<C-U>bp<CR>
 
 " Window navigation
-nnoremap <C-j> <C-w>j
-nnoremap <C-J> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-K> <C-w>k
 if has('nvim')
+    tnoremap <C-h> <C-\><C-n><C-w>h
+    tnoremap <C-j> <C-\><C-n><C-w>j
+    tnoremap <C-k> <C-\><C-n><C-w>k
+    tnoremap <C-l> <C-\><C-n><C-w>l
+
+    nnoremap <C-h> <C-w>h
+    nnoremap <BS> <C-w>h
+    nnoremap <C-j> <C-w>j
+    nnoremap <C-k> <C-w>k
+    nnoremap <C-l> <C-w>l
+
+else
+    nnoremap <C-j> <C-w>j
+    nnoremap <C-J> <C-w>j
+    nnoremap <C-k> <C-w>k
+    nnoremap <C-K> <C-w>k
+    nnoremap <C-l> <C-w>l
+    nnoremap <C-L> <C-w>l
     nnoremap <C-h> <C-w>h
     nnoremap <C-H> <C-w>h
-else
-    nnoremap <BS> <C-w>h
-    nnoremap <BS> <C-w>h
 endif
-nnoremap <C-h> <C-w>h
-nnoremap <C-H> <C-w>h
-nnoremap <C-l> <C-w>l
-nnoremap <C-L> <C-w>l
 
 " Window resizing
 nnoremap <C-7> :resize +2
