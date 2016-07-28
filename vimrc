@@ -6,6 +6,8 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+let g:goldenview__enable_default_mapping = 0
+
 " let Vundle manage Vundle
 " required! 
 Bundle 'gmarik/vundle'
@@ -37,6 +39,8 @@ Bundle 'altercation/vim-colors-solarized.git'
 Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Bundle "pangloss/vim-javascript"
 Bundle "elzr/vim-json"
+" Bundle 'roman/golden-ratio'
+Bundle 'zhaocai/GoldenView.Vim'
 " Bundle "chrisbra/csv.vim"
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'udalov/kotlin-vim'
@@ -149,13 +153,14 @@ set ruler
 " Whether or not to show the tabs list
 "set showtabline=2
 
-"
 " COMMENT THESE OUT TO LET VIM WINDOWS BE THE DEFAULT SIZE
-set winwidth=121
-set winminwidth=12
-set winheight=25
-set winminheight=15
-au VimEnter * set winheight=999
+"if has("gui_macvim")
+  "set winwidth=121
+  "set winminwidth=12
+  "set winheight=25
+  "set winminheight=15
+  "au VimEnter * set winheight=999
+"endif
 
 "set errorformat=%A""%f: %l"" : %m,%+G%.%#
 set errorformat=%A""%f: %l"" : %m,%+%.%#
@@ -269,7 +274,7 @@ nnoremap <Leader>st :<C-U>g/^\tat.*\.java.*/d<CR>:<C-U>g/^\tat.*(Unknown Source)
 "noremap <Leader>st :<C-U>g/^\tat .*\(\.java:[0-9]\+\\|(Native Method)\\|(Unknown Source)\).*/d<CR>
 
 " Dash lookup word under cursor
-noremap <Leader>jd :<C-U>Dash <C-R>=expand("<cword>") <CR><CR>
+noremap <Leader>jd :<C-U>Dash! <C-R>=expand("<cword>") <CR><CR>
 
 " JIRA
 noremap <Leader>j :<C-U>!jira<CR> <CR>
@@ -285,12 +290,26 @@ nnoremap <Leader>y :<C-U>!cat '<C-R>=expand("%:p") <CR>' \| pbcopy <CR> <CR>
 
 " Navigate next buffer / previous buffer
 nnoremap <C-n> :<C-U>bn<CR>
+nnoremap <C-N> :<C-U>bn<CR>
 nnoremap <C-b> :<C-U>bp<CR>
+nnoremap <C-B> :<C-U>bp<CR>
+
 " Window navigation
 nnoremap <C-j> <C-w>j
+nnoremap <C-J> <C-w>j
 nnoremap <C-k> <C-w>k
+nnoremap <C-K> <C-w>k
+if has('nvim')
+    nnoremap <C-h> <C-w>h
+    nnoremap <C-H> <C-w>h
+else
+    nnoremap <BS> <C-w>h
+    nnoremap <BS> <C-w>h
+endif
 nnoremap <C-h> <C-w>h
+nnoremap <C-H> <C-w>h
 nnoremap <C-l> <C-w>l
+nnoremap <C-L> <C-w>l
 
 " Window resizing
 nnoremap <C-7> :resize +2
