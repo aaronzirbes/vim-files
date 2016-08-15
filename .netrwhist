@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/ajz/dev/opi/standup/build'
+let g:netrw_dirhist_2='/Users/ajz/.gradle'
+let g:netrw_dirhist_3='/Users/ajz/dev/groovy/ami-cleaner/build'
+let g:netrw_dirhist_4='/Users/ajz/.yjp'
+let g:netrw_dirhist_5='/Users/ajz/.vscode'

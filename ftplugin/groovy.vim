@@ -1,8 +1,9 @@
 
 if has('nvim')
+    nnoremap <Leader>rr :<C-U>split<CR> <C-W>j :<C-U>terminal ~/.vim/grails-gradle-test.sh '<C-R>=expand("%:t:r") <CR>'<CR> <C-\><C-n><C-w>k
+
     " Dispatch code execution
     nnoremap <Leader>rg :<C-U>terminal groovy '<C-R>=expand("%:p") <CR>'<CR>
-    nnoremap <Leader>rr :<C-U>terminal ~/.vim/grails-gradle-test.sh '<C-R>=expand("%:t:r") <CR>'<CR>
     nnoremap <Leader>rb :<C-U>terminal ~/.vim/grails-gradle-build.sh '<C-R>=expand("%:t:r") <CR>'<CR>
     nnoremap <Leader>rn :<C-U>terminal gradle codenarcMain<CR>
     nnoremap <Leader>gr :<C-U>terminal gradle run<CR>
