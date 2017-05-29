@@ -122,7 +122,6 @@ groovy.lang.Tuple
 groovy.lang.Writable
 groovy.mock.interceptor.CallSpec
 groovy.mock.interceptor.Demand
-groovy.mock.interceptor.Ignore
 groovy.mock.interceptor.LooseExpectation
 groovy.mock.interceptor.MockFor
 groovy.mock.interceptor.MockInterceptor
@@ -267,6 +266,8 @@ groovy.time.TimeDuration
 groovy.transform.IndexedProperty
 groovy.transform.InheritConstructors
 groovy.transform.Synchronized
+groovy.transform.TypeCheckingMode
+groovy.transform.CompileStatic
 groovy.ui.Console
 groovy.ui.ConsoleActions
 groovy.ui.ConsoleApplet

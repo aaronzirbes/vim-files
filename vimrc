@@ -9,7 +9,7 @@ call vundle#rc()
 let g:goldenview__enable_default_mapping = 0
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
 
 " Vundle stuff
@@ -37,36 +37,43 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/Align.git'
 Bundle 'altercation/vim-colors-solarized.git'
 Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
-Bundle "pangloss/vim-javascript"
-Bundle "elzr/vim-json"
-" Bundle 'roman/golden-ratio'
+Bundle 'pangloss/vim-javascript'
+Bundle 'elzr/vim-json'
 Bundle 'zhaocai/GoldenView.Vim'
-" Bundle "chrisbra/csv.vim"
+Bundle 'blindFS/vim-taskwarrior'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'udalov/kotlin-vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " Requires:
 "https://github.com/editorconfig/editorconfig-core-c
 
 " Occasional Plugins
-"Bundle "jplaut/vim-arduino-ino"
-"Bundle "powerman/vim-plugin-AnsiEsc"
+" Bundle 'jplaut/vim-arduino-ino'
+" Bundle 'powerman/vim-plugin-AnsiEsc'
+" Bundle 'chrisbra/csv.vim'
 
-"Bundle "scrooloose/syntastic"
+"Bundle 'scrooloose/syntastic'
 
-" After updating this list, run `vim +BundleInstall +qall`
-" After updating this list, run `vim +PluginInstall +qall`
+" After updating this list, run `nvim +BundleInstall +qall`
+" After updating this list, run `nvim +PluginInstall +qall`
 
 "let g:vim_arduino_library_path = /Applications/Arduino.app/Contents/Java
 "let g:vim_arduino_serial_port = /my/serial/port
+"
+let g:airline_theme='tomorrow'
 
 " Enables HTML/CSS syntax highlighting in your JavaScript file.
 "set javascript_enable_domhtmlcss
 
+" Status line
+"set statusline=%t\ [%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 " Syntastic syntax checking
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
+"%{fugitive#statusline()} to 'statusline'
 
 "let g:syntastic_always_populate_loc_list = 1
 "let g:syntastic_auto_loc_list = 1
@@ -82,8 +89,6 @@ Bundle 'Kapeli/dash.vim'
 " Bundle 'jeetsukumaran/vim-buffergator.git'
 " Bundle 'sjl/gundo.vim.git'
 
-" Status line
-"set statusline=%t\ [%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 
 " tagbar support for groovy
  let g:tagbar_type_groovy = {
@@ -122,6 +127,8 @@ set wildignore+=*.class,.git,.hg,.svn,**/target/classes/**,**/target/test-classe
 let g:ctrlp_cmd = 'CtrlPTag'
 nnoremap <C-i> :<C-U>CtrlP <CR>
 
+" Tabline support for airline
+let g:airline#extensions#tabline#enabled = 1
 
 " Exhuberant C-Tags
 set tags=.tags
@@ -148,7 +155,6 @@ set numberwidth=5
 
 " Always show cursor information
 set ruler
-"%{fugitive#statusline()} to 'statusline'
 
 " Whether or not to show the tabs list
 "set showtabline=2
@@ -209,7 +215,7 @@ highlight ColorColumn ctermbg=2
 
 " ctags
 command! Tag :call GenerateCTags()
-function! GenerateCTags() 
+function! GenerateCTags()
     let file = expand("%:p:h")
     execute ":!ctags -f " . file . "/.tags " . file . "/*"
 endfunction
@@ -229,8 +235,15 @@ vnoremap <silent> # :<C-U>
 " Split line
 nnoremap L i<CR><Esc>
 
-" Grails Imports location
-let g:grails_import_list_file=$HOME . '/.vim/grails-import-list.txt'
+" Vim JDK Imports location
+let g:vimport_filetype_import_files = {
+        \ 'java': [$HOME . '/.vim/data/vimports_java.txt'],
+        \ 'groovy': [$HOME . '/.vim/data/vimports_java.txt', $HOME . '/.vim/data/vimports_groovy.txt' ],
+        \ 'kotlin': [$HOME . '/.vim/data/vimports_kotlin.txt'],
+        \ 'scala': []
+    \ }
+
+let g:vimport_lookup_gradle_classpath=1
 noremap <Leader>i :InsertImport <CR> :%s/  *$// <CR>
 
 " vimdiff ignore whitespace
