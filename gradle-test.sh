@@ -5,6 +5,8 @@ phase="test"
 continuous='--continuous'
 clean=""
 
+-p ./micro-services/task-manager test --tests com.tgt.warehouse.task.AssignTaskSpec
+
 echo "Test class: ${test_class}"
 echo "Test class: ${test_class}" 2>&1
 
@@ -32,6 +34,7 @@ else
     if [[ $file == src/test/groovy* ]]; then
         echo "INFO: Project is not a multi-project build."
     else
+        dash_project=""
         # Project
         project_folder=`echo ${file} |sed -e 's#/src/test/.*##'`
         project=`echo ${project_folder} |sed -e 's#/#:#g'`
@@ -40,6 +43,7 @@ else
             echo "INFO: Test lives in project: ${project}"
             single_opt="${project}:${phase}.single"
             task="${project}:${phase}"
+            dash_project="-p ${project_folder}"
         else
             echo "INFO: Test lives in root project."
             project_folder='.'
@@ -49,8 +53,11 @@ else
 
     # gradle -Dmicro-services:dci-osn-bridge:test.single=OsnCreateServiceSpec :micro-services:dci-osn-bridge:test
 
-    echo "gradle -D${single_opt}=${test_class} ${task}"
-    gradle ${continuous} -Dtest.reportFormat=html,xml -D${single_opt}=${test_class} ${clean} ${task} ${debug}
+    #echo "gradle -D${single_opt}=${test_class} ${task}"
+    #gradle ${continuous} -Dtest.reportFormat=html,xml -D${single_opt}=${test_class} ${clean} ${task} ${debug}
+    #  gradle -p ... test --tests com.tgt.warehouse.task.AssignTaskSpec
+    echo "gradle ${continuous} ${dash_project} -Dtest.reportFormat=html,xml ${phase} --tests "*${test_class}" ${clean} ${debug}"
+    gradle ${continuous} ${dash_project} -Dtest.reportFormat=html,xml ${phase} --tests "*${test_class}" ${clean} ${debug}
 
     find ${project_folder}/build -name "*${test_class}.xml"
 fi

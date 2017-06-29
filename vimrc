@@ -29,6 +29,7 @@ Bundle 'scrooloose/nerdcommenter.git'
 Bundle 'sjurgemeyer/vimport'
 Bundle 'tpope/vim-abolish.git'
 Bundle 'tpope/vim-dispatch'
+Bundle 'radenling/vim-dispatch-neovim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
@@ -265,6 +266,8 @@ noremap <Leader>L :<C-U>Gitv<CR>
 let g:NERDTreeWinSize = 40
 noremap <Leader>nt :<C-U>NERDTreeToggle<CR>
 noremap <Leader>nf :<C-U>NERDTreeFind<CR>
+
+noremap :StacktraceFromJson :<C-U>%s#\\n\\t#\r\t#g<CR>
 
 " tagbar
 noremap <Leader>t :<C-U>TagbarToggle<CR>
