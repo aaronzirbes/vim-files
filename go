@@ -16,6 +16,7 @@ fi
 
 if [ ! -e ~/.config/nvim ]; then
     echo "symlinking ~/.vim to ~/.config/nvim"
+    mkdir -p ~/.config/nvim/
     ln -s ~/.vim ~/.config/nvim
 fi
 
