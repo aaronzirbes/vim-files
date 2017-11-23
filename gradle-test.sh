@@ -5,7 +5,7 @@ phase="test"
 continuous='--continuous'
 clean=""
 
--p ./micro-services/task-manager test --tests com.tgt.warehouse.task.AssignTaskSpec
+# -p ./micro-services/task-manager test --tests com.tgt.warehouse.task.AssignTaskSpec
 
 echo "Test class: ${test_class}"
 echo "Test class: ${test_class}" 2>&1
@@ -57,7 +57,7 @@ else
     #gradle ${continuous} -Dtest.reportFormat=html,xml -D${single_opt}=${test_class} ${clean} ${task} ${debug}
     #  gradle -p ... test --tests com.tgt.warehouse.task.AssignTaskSpec
     echo "gradle ${continuous} ${dash_project} -Dtest.reportFormat=html,xml ${phase} --tests "*${test_class}" ${clean} ${debug}"
-    gradle ${continuous} ${dash_project} -Dtest.reportFormat=html,xml ${phase} --tests "*${test_class}" ${clean} ${debug}
+    gradle ${continuous} ${dash_project} --info -Dtest.reportFormat=html,xml ${phase} --tests "*${test_class}" ${clean} ${debug}
 
     find ${project_folder}/build -name "*${test_class}.xml"
 fi
