@@ -16,6 +16,8 @@ Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
 Bundle 'aaronzirbes/grails-vim.git'
 Bundle 'majutsushi/tagbar'
+Bundle 'vim-scripts/Gist.vim'
+Bundle 'vim-scripts/WebAPI.vim'
 Bundle 'vim-scripts/ZoomWin'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'scrooloose/nerdtree'
@@ -203,6 +205,7 @@ set background=dark
 "colorscheme koehler
 "colorscheme solarized
 colorscheme Tomorrow-Night
+"colorscheme Tomorrow
 
 " destroy all trailing whitespace
 autocmd BufWritePre *.groovy :%s/\s\+$//e
@@ -238,7 +241,7 @@ nnoremap L i<CR><Esc>
 " Vim JDK Imports location
 let g:vimport_filetype_import_files = {
         \ 'java': [$HOME . '/.vim/data/vimports_java.txt'],
-        \ 'groovy': [$HOME . '/.vim/data/vimports_java.txt', $HOME . '/.vim/data/vimports_groovy.txt' ],
+        \ 'groovy': [$HOME . '/.vim/data/vimports_java.txt', $HOME . '/.vim/data/vimports_groovy.txt', $HOME . '/.vim/data/vimports_spock.txt' ],
         \ 'kotlin': [$HOME . '/.vim/data/vimports_kotlin.txt'],
         \ 'scala': []
     \ }
@@ -247,7 +250,7 @@ let g:vimport_lookup_gradle_classpath=1
 noremap <Leader>i :InsertImport <CR> :%s/  *$// <CR>
 
 " vimdiff ignore whitespace
-set diffopt+=iwhite
+"set diffopt+=iwhite
 
 " Fugitive
 noremap <Leader>b :<C-U>Gblame<CR>
