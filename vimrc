@@ -41,7 +41,6 @@ Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Bundle 'pangloss/vim-javascript'
 Bundle 'elzr/vim-json'
 Bundle 'zhaocai/GoldenView.Vim'
-Bundle 'blindFS/vim-taskwarrior'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'udalov/kotlin-vim'
 Plugin 'vim-airline/vim-airline'
