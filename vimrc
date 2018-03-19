@@ -14,7 +14,7 @@ Bundle 'gmarik/vundle'
 
 " Vundle stuff
 Bundle 'kien/ctrlp.vim'
-Bundle 'aaronzirbes/grails-vim.git'
+"Bundle 'aaronzirbes/grails-vim.git'
 Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/Gist.vim'
 Bundle 'vim-scripts/WebAPI.vim'
@@ -28,7 +28,7 @@ Bundle 'Shougo/neosnippet-snippets'
 Bundle 'freitass/todo.txt-vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'scrooloose/nerdcommenter.git'
-Bundle 'sjurgemeyer/vimport'
+Bundle 'aaronzirbes/vimport'
 Bundle 'tpope/vim-abolish.git'
 Bundle 'tpope/vim-dispatch'
 Bundle 'radenling/vim-dispatch-neovim'
@@ -47,6 +47,10 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'udalov/kotlin-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'neomake/neomake'
+
+"call neomake#configure#automake('w')
+let g:neomake_open_list=1
 
 " Requires:
 "https://github.com/editorconfig/editorconfig-core-c

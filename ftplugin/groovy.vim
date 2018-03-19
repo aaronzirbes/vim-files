@@ -32,3 +32,6 @@ nnoremap <Leader>vs :<C-U>tag <C-R>=expand("<cword>") <CR>Spec<CR>
 " Groovy / Java find uses
 nnoremap <Leader>fu :<C-U>grep --include '*.groovy' --include '*.gsp' --include '*.java' --include '*.gradle' -rE "\<<C-R>=expand("<cword>") <CR>\>" .<CR>:copen<CR>
 
+nnoremap <Leader>gm :Neomake! gradleCompile<CR>
+
+
