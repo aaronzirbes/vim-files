@@ -13,40 +13,45 @@ let g:goldenview__enable_default_mapping = 0
 Bundle 'gmarik/vundle'
 
 " Vundle stuff
+" Ctrl-P, Ctrl-O
 Bundle 'kien/ctrlp.vim'
-Bundle 'aaronzirbes/grails-vim.git'
-Bundle 'majutsushi/tagbar'
-Bundle 'vim-scripts/Gist.vim'
-Bundle 'vim-scripts/WebAPI.vim'
-Bundle 'vim-scripts/ZoomWin'
-Bundle 'vim-scripts/taglist.vim'
+",nt ,nf
 Bundle 'scrooloose/nerdtree'
+Bundle 'tpope/vim-fugitive'
 Bundle 'gregsexton/gitv'
-Bundle 'Shougo/neocomplcache.git'
-Bundle 'Shougo/neosnippet.git'
-Bundle 'Shougo/neosnippet-snippets'
-Bundle 'freitass/todo.txt-vim'
 Bundle 'mileszs/ack.vim'
-Bundle 'scrooloose/nerdcommenter.git'
-Bundle 'sjurgemeyer/vimport'
 Bundle 'tpope/vim-abolish.git'
 Bundle 'tpope/vim-dispatch'
 Bundle 'radenling/vim-dispatch-neovim'
-Bundle 'tpope/vim-fugitive'
+Bundle 'scrooloose/nerdcommenter.git'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired.git'
-Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/Align.git'
-Bundle 'altercation/vim-colors-solarized.git'
-Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
-Bundle 'pangloss/vim-javascript'
 Bundle 'elzr/vim-json'
-Bundle 'zhaocai/GoldenView.Vim'
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'udalov/kotlin-vim'
+
+" Maybe
+Bundle 'majutsushi/tagbar'
+Bundle 'vim-scripts/taglist.vim'
+"Bundle 'altercation/vim-colors-solarized.git'
+Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+" Java Imports
+"Bundle 'sjurgemeyer/vimport'
+
+"" Auto window resizing
+"Bundle 'vim-scripts/ZoomWin'
+"Bundle 'zhaocai/GoldenView.Vim'
+"
+"Bundle 'Shougo/neocomplcache.git'
+"Bundle 'Shougo/neosnippet.git'
+"Bundle 'Shougo/neosnippet-snippets'
+"Bundle 'freitass/todo.txt-vim'
+"Bundle 'vim-ruby/vim-ruby'
+"Bundle 'pangloss/vim-javascript'
+"Plugin 'udalov/kotlin-vim'
 
 " Requires:
 "https://github.com/editorconfig/editorconfig-core-c
@@ -83,7 +88,7 @@ let g:airline_theme='tomorrow'
 "let g:syntastic_check_on_wq = 0
 
 " Experimenting
-Bundle 'Kapeli/dash.vim'
+"Bundle 'Kapeli/dash.vim'
 
 " Maybe plugins
 " Bundle 'derekwyatt/vim-scala'
@@ -276,11 +281,11 @@ noremap <Leader>t :<C-U>TagbarToggle<CR>
 noremap <Leader>tb :<C-U>!ctags -R<CR>
 " Jira https://gist.github.com/2d860441b323e543d2bc
 
-" Tired of hitting shift
-nnoremap ; :
-nnoremap : ;
-vnoremap ; :
-vnoremap : ;
+" Tired of hitting shift: DANGER ZONE
+"nnoremap ; :
+"nnoremap : ;
+"vnoremap ; :
+"vnoremap : ;
 
 " Really not a big fan of trailing whitespace, mark it red
 set list listchars=tab:>-,trail:·,precedes:<,extends:>
@@ -288,14 +293,14 @@ set list listchars=tab:>-,trail:·,precedes:<,extends:>
 noremap <Leader>hr <C-U>set nolist
 
 " clean stacktraces
-nnoremap <Leader>st :<C-U>g/^\tat.*\.java.*/d<CR>:<C-U>g/^\tat.*(Unknown Source).*/d<CR>:<C-U>g/^\tat.*(Native Method).*/d<CR>
+"nnoremap <Leader>st :<C-U>g/^\tat.*\.java.*/d<CR>:<C-U>g/^\tat.*(Unknown Source).*/d<CR>:<C-U>g/^\tat.*(Native Method).*/d<CR>
 "noremap <Leader>st :<C-U>g/^\tat .*\(\.java:[0-9]\+\\|(Native Method)\\|(Unknown Source)\).*/d<CR>
 
 " Dash lookup word under cursor
-noremap <Leader>jd :<C-U>Dash! <C-R>=expand("<cword>") <CR><CR>
+"noremap <Leader>jd :<C-U>Dash! <C-R>=expand("<cword>") <CR><CR>
 
 " JIRA
-noremap <Leader>j :<C-U>!jira<CR> <CR>
+"noremap <Leader>j :<C-U>!jira<CR> <CR>
 
 " Enable Spell check highlighting for buffer
 noremap <Leader>sc :<C-U>set spell spelllang=en_us<CR>
