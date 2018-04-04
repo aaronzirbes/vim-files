@@ -2,7 +2,7 @@
 
 test_class="${1}"
 phase="test"
-continuous='--continuous'
+# continuous='--continuous'
 clean=""
 
 # -p ./micro-services/task-manager test --tests com.tgt.warehouse.task.AssignTaskSpec

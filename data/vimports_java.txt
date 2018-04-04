@@ -292,3 +292,24 @@ javax.inject.Named
 javax.inject.Qualifier
 javax.inject.Scope
 javax.inject.Singleton
+
+" Validation
+
+javax.validation.Validator
+javax.validation.ValidatorContext
+javax.validation.ValidatorFactory
+javax.validation.Validation
+
+javax.validation.constraints.AssertFalse
+javax.validation.constraints.AssertTrue
+javax.validation.constraints.DecimalMax
+javax.validation.constraints.DecimalMin
+javax.validation.constraints.Digits
+javax.validation.constraints.Future
+javax.validation.constraints.Max
+javax.validation.constraints.Min
+javax.validation.constraints.NotNull
+javax.validation.constraints.Null
+javax.validation.constraints.Past
+javax.validation.constraints.Pattern
+javax.validation.constraints.Size
