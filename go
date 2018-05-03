@@ -2,7 +2,7 @@
 
 if [ ! -d ~/.vim/ ]; then
     echo "cloning https://github.com/aaronzirbes/vim-files.git to ~/.vim"
-    git clone https://github.com/aaronzirbes/vim-files.git ~/.vim
+    git clone https://github.com/aaronzirbes/vim-files.git ~/.vim --branch sane-defaults --single-branch
 else
     echo "~/.vim/ already exists. skipping."
 fi
