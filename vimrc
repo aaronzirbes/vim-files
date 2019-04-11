@@ -4,6 +4,7 @@
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
+set rtp+=/usr/local/opt/fzf
 call vundle#rc()
 
 let g:goldenview__enable_default_mapping = 0
@@ -13,8 +14,6 @@ let g:goldenview__enable_default_mapping = 0
 Bundle 'gmarik/vundle'
 
 " Vundle stuff
-Bundle 'kien/ctrlp.vim'
-"Bundle 'aaronzirbes/grails-vim.git'
 Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/Gist.vim'
 Bundle 'vim-scripts/WebAPI.vim'
@@ -43,11 +42,14 @@ Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Bundle 'pangloss/vim-javascript'
 Bundle 'elzr/vim-json'
 Bundle 'zhaocai/GoldenView.Vim'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'udalov/kotlin-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'neomake/neomake'
+Plugin 'luochen1990/rainbow'
 
 "call neomake#configure#automake('w')
 let g:neomake_open_list=1
@@ -69,6 +71,9 @@ let g:neomake_open_list=1
 "let g:vim_arduino_serial_port = /my/serial/port
 "
 let g:airline_theme='tomorrow'
+
+" Rainbow Parentheses Improved
+let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 
 " Enables HTML/CSS syntax highlighting in your JavaScript file.
 "set javascript_enable_domhtmlcss
@@ -129,9 +134,12 @@ if has("autocmd")
 endif
 
 " Ctrl-P ignore path
-set wildignore+=*.class,.git,.hg,.svn,**/target/classes/**,**/target/test-classes/**,**/target/test-reports/**.html,**/target/test-reports/**.xml,**/build/**
-let g:ctrlp_cmd = 'CtrlPTag'
-nnoremap <C-i> :<C-U>CtrlP <CR>
+"set wildignore+=*.class,.git,.hg,.svn,**/target/classes/**,**/target/test-classes/**,**/target/test-reports/**.html,**/target/test-reports/**.xml,**/build/**
+"let g:ctrlp_cmd = 'CtrlPTag'
+"nnoremap <C-i> :<C-U>CtrlP <CR>
+
+nnoremap <C-p> :<C-U>Tags <CR>
+nnoremap <C-i> :<C-U>GFiles <CR>
 
 " Tabline support for airline
 let g:airline#extensions#tabline#enabled = 1
@@ -208,7 +216,9 @@ set background=dark
 "colorscheme torte
 "colorscheme koehler
 "colorscheme solarized
-colorscheme Tomorrow-Night
+"colorscheme Tomorrow-Night
+"colorscheme Tomorrow-Night-Eighties
+colorscheme Tomorrow-Night-Bright
 "colorscheme Tomorrow
 
 " destroy all trailing whitespace
@@ -277,7 +287,10 @@ noremap :StacktraceFromJson :<C-U>%s#\\n\\t#\r\t#g<CR>
 
 " tagbar
 noremap <Leader>t :<C-U>TagbarToggle<CR>
-noremap <Leader>tb :<C-U>!ctags -R<CR>
+
+nnoremap <Leader>tb :<C-U>!~/.vim/buildtags.sh<CR>
+
+let g:airline#extensions#tagbar#enabled = 0
 " Jira https://gist.github.com/2d860441b323e543d2bc
 
 " Tired of hitting shift
