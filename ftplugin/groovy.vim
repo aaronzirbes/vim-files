@@ -1,6 +1,6 @@
 
 if has('nvim')
-    nnoremap <Leader>rr :<C-U>split<CR> <C-W>j :<C-U>terminal ~/.vim/grails-gradle-test.sh '<C-R>=expand("%:t:r") <CR>'<CR> <C-\><C-n><C-w>k
+    nnoremap <Leader>rr :<C-U>split<CR> <C-W>j :<C-U>terminal ~/.vim/gradle-test.sh '<C-R>=expand("%:t:r") <CR>'<CR> <C-\><C-n><C-w>k
 
     " Dispatch code execution
     "nnoremap <Leader>rg :<C-U>terminal groovy '<C-R>=expand("%:p") <CR>'<CR>

@@ -295,6 +295,7 @@ javax.inject.Singleton
 
 " Validation
 
+javax.validation.ConstraintViolationException
 javax.validation.Validator
 javax.validation.ValidatorContext
 javax.validation.ValidatorFactory
@@ -313,3 +314,35 @@ javax.validation.constraints.Null
 javax.validation.constraints.Past
 javax.validation.constraints.Pattern
 javax.validation.constraints.Size
+ 
+com.tgt.warehouse.event.common.processing.ProcessorContext
+com.tgt.warehouse.api.EventApi
+com.tgt.warehouse.commons.exception.ValidationException
+com.tgt.warehouse.dto.event.Event
+com.tgt.warehouse.dto.event.RoutableEvent
+com.tgt.warehouse.event.common.config.EventConsumerConfig
+com.tgt.warehouse.event.common.processing.EventProcessor
+com.tgt.warehouse.event.common.processing.RecordProcessor
+com.tgt.warehouse.event.common.processing.ProcessorContext
+com.tgt.warehouse.publisher.EventPublisher
+com.target.ole.config.TapConfigLoader
+com.tgt.warehouse.mapper.ObjectMapperBuilder
+com.tgt.warehouse.metrics.MetricsService
+com.tgt.warehouse.event.guice.ConsumerModule
+org.reflections.scanners.SubTypesScanner
+org.reflections.Reflections
+com.tgt.warehouse.config.KafkaProducerConfig
+com.tgt.warehouse.metrics.test.MockableMetricsService
+com.tgt.warehouse.metrics.test.TestMetricsService
+com.tgt.warehouse.event.common.di.GuiceConsumerSpecification
+
+java.util.Optional
+java.time.Instant
+java.time.OffsetDateTime
+java.time.OffsetTime
+java.time.OffsetTime
+java.time.ZonedDateTime
+java.time.format.DateTimeFormatter
+java.util.concurrent.ConcurrentHashMap
+com.target.ole.mapper.Json
+com.target.ole.mapper.Yaml

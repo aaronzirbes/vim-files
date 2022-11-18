@@ -3,12 +3,17 @@
 test_class="${1}"
 phase="test"
 continuous='--continuous'
+#continuous=''
 clean=""
 
 # -p ./micro-services/task-manager test --tests com.tgt.warehouse.task.AssignTaskSpec
 
 echo "Test class: ${test_class}"
 echo "Test class: ${test_class}" 2>&1
+
+export TMPDIR=`mktemp -d -t gradle`
+chown -R `whoami` $TMPDIR
+echo "Using TMPDIR ${TMPDIR}"
 
 if [ -e pom.xml ]; then
     echo "mvn test -Dtest=${test_class}"

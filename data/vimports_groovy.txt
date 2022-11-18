@@ -112,7 +112,6 @@ groovy.lang.ReadOnlyPropertyException
 groovy.lang.Reference
 groovy.lang.Script
 groovy.lang.Sequence
-groovy.lang.Singleton
 groovy.lang.SpreadListEvaluatingException
 groovy.lang.SpreadMap
 groovy.lang.SpreadMapEvaluatingException
@@ -268,6 +267,7 @@ groovy.transform.InheritConstructors
 groovy.transform.Synchronized
 groovy.transform.TypeCheckingMode
 groovy.transform.CompileStatic
+groovy.transform.CompileDynamic
 groovy.ui.Console
 groovy.ui.ConsoleActions
 groovy.ui.ConsoleApplet

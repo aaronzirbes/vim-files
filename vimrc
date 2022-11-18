@@ -42,6 +42,9 @@ Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Bundle 'pangloss/vim-javascript'
 Bundle 'elzr/vim-json'
 Bundle 'zhaocai/GoldenView.Vim'
+" Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+" Plugin 'neoclide/coc.nvim'
+Plugin 'cespare/vim-toml'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'editorconfig/editorconfig-vim'
@@ -50,6 +53,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'neomake/neomake'
 Plugin 'luochen1990/rainbow'
+Plugin 'fatih/vim-go'
+
 
 "call neomake#configure#automake('w')
 let g:neomake_open_list=1
@@ -66,6 +71,8 @@ let g:neomake_open_list=1
 
 " After updating this list, run `nvim +BundleInstall +qall`
 " After updating this list, run `nvim +PluginInstall +qall`
+"
+" After updating this list, run `nvim +BundleUpdate +qall`
 
 "let g:vim_arduino_library_path = /Applications/Arduino.app/Contents/Java
 "let g:vim_arduino_serial_port = /my/serial/port
@@ -267,14 +274,13 @@ noremap <Leader>i :InsertImport <CR> :%s/  *$// <CR>
 "set diffopt+=iwhite
 
 " Fugitive
-noremap <Leader>b :<C-U>Gblame<CR>
-noremap <Leader>di :<C-U>Gdiff<CR>
-noremap <Leader>dd :<C-U>Gvsplit develop:<C-R>=expand("%")<CR><CR>
-noremap <Leader>s :<C-U>Gstatus<CR><C-W>20+
-noremap <Leader>h :<C-U>Gbrowse<CR>
-vnoremap <Leader>h :<C-U>Gbrowse<CR>
-noremap <Leader>c :<C-U>Gcommit<CR>
-noremap <Leader>d :<C-U>Gdiff<CR>
+noremap <Leader>b :<C-U>Git blame<CR>
+noremap <Leader>di :<C-U>Git diff<CR>
+noremap <Leader>s :<C-U>Git<CR><C-W>20+
+noremap <Leader>h :<C-U>GBrowse<CR>
+vnoremap <Leader>h :<C-U>GBrowse<CR>
+noremap <Leader>c :<C-U>Git commit<CR>
+noremap <Leader>d :<C-U>Gdiffsplit<CR>
 " GitV
 noremap <Leader>l :<C-U>Gitv!<CR>
 noremap <Leader>L :<C-U>Gitv<CR>
