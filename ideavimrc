@@ -21,6 +21,7 @@ set tabstop=4
 set shiftwidth=4
 set laststatus=2
 set background=dark
+set visualbell
 
 set number
 "set numberwidth=5
@@ -44,5 +45,7 @@ noremap <Leader>s :<C-U>action Vcs.Show.Local.Changes<CR>
 noremap <Leader>nf :<C-U>action SelectInProjectView<CR>
 noremap <Leader>nt :<C-U>action SelectInProjectView<CR>
 noremap <Leader>b :<C-U>action Annotate<CR>
-noremap <Leader>rr <C-R>
+noremap <Leader>rr :<C-U>action Rerun<CR>
+noremap <Leader>df :<C-U>action ToggleDistractionFreeMode<CR>
+noremap <Leader>pp :<C-U>action TogglePresentationMode<CR>
 
