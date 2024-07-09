@@ -67,8 +67,9 @@ let g:neomake_open_list=1
 
 " After updating this list, run `nvim +BundleInstall +qall`
 " After updating this list, run `nvim +PluginInstall +qall`
-"
 " After updating this list, run `nvim +BundleUpdate +qall`
+"
+" nvim +BundleInstall +qall && nvim +PluginInstall +qall && nvim +BundleUpdate +qall
 
 "let g:vim_arduino_library_path = /Applications/Arduino.app/Contents/Java
 "let g:vim_arduino_serial_port = /my/serial/port
